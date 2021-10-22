@@ -12,3 +12,8 @@ func _on_Bullet_body_entered(body: Node) -> void:
     body.queue_free()
     print( "Enemy got hit by bullet" )
   queue_free()
+
+# function to free the bullet once it leaves the screen (this is to avoid hitting other enemies off screen)
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+  queue_free()
+  print( "Bullet has left screen. Removing" )

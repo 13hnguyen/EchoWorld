@@ -10,14 +10,23 @@ var bullet = preload("res://Bullet/Bullet.tscn")
 
 # looking for input to signal that the player shoots a bullet
 func _input( event : InputEvent ) -> void :
-  if event.is_action_pressed( "shoot" ) :
-    shoot()
+  if event.is_action_pressed( "shootRight" ) :
+    shootRight()
+  elif event.is_action_pressed( "shootUp" ) :
+    shootUp()
 
-# function to handle creating an instance of the bullet when player shoots
-func shoot():
+# function to handle creating an instance of the bullet when player shoots RIGHT
+func shootRight():
   var b = bullet.instance()
   owner.add_child(b)
-  b.transform = $BulletSpawnPos.global_transform
+  b.transform = $BulletRightSpawnPos.global_transform
+
+# function to handle creating an instance of the bullet when player shoots UP
+func shootUp():
+  var b = bullet.instance()
+  owner.add_child(b)
+  b.transform = $BulletUpSpawnPos.global_transform
+  b.rotation = $BulletUpSpawnPos.global_rotation
 
 func _physics_process( delta : float ) -> void :
   var isJumpInterrupted : = Input.is_action_just_released("jump") and velocity.y < 0.0
