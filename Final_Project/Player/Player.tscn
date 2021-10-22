@@ -54,5 +54,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
 shape = SubResource( 3 )
 
+[node name="BulletRightSpawnPos" type="Position2D" parent="."]
+position = Vector2( 45, -40 )
+
+[node name="BulletUpSpawnPos" type="Position2D" parent="."]
+position = Vector2( 15, -90 )
+rotation = -0.809833
+
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
