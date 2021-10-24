@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alexander-nakarada-chase.mp3-c094775abd008f74c147838a20cf720f.mp3str"
+
+[deps]
+
+source_file="res://Music/alexander-nakarada-chase.mp3"
+dest_files=[ "res://.import/alexander-nakarada-chase.mp3-c094775abd008f74c147838a20cf720f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

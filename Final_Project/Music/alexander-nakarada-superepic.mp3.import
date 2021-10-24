@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alexander-nakarada-superepic.mp3-b87644d977ab90acb97c296d6e4ce71f.mp3str"
+
+[deps]
+
+source_file="res://Music/alexander-nakarada-superepic.mp3"
+dest_files=[ "res://.import/alexander-nakarada-superepic.mp3-b87644d977ab90acb97c296d6e4ce71f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
