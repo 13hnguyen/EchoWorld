@@ -58,8 +58,8 @@ func _on_StompDetector_body_entered( _body : Node ) -> void :
   velocity.y = -stompImpluse
 
 const level = [
-  { 'StartPosition' : Vector2(  163, 181 ), 'CameraLimits' : [  -64, 3984 ] },
-  { 'StartPosition' : Vector2( 4288, 181 ), 'CameraLimits' : [ 3904, 7952 ] }
+  { 'StartPosition' : Vector2(  163, 181 ), 'CameraLimits' : [  -64, 3984 ] }
+  # repeat object above inside this array when we starting adding new levels
   ]
 
 var currentLevel : = 0
