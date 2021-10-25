@@ -19,7 +19,7 @@ func _process(delta):
   SinceSpawn -= delta
   
   if SinceSpawn <= 0 :
-    var EnemyNode = preload("res://Enemy/EnemySpawner.tscn").instance()
+    var EnemyNode = load("res://Enemy/EnemySpawner.tscn").instance()
     EnemyNode.position = Spawn
     add_child(EnemyNode)
 
