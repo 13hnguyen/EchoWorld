@@ -11,8 +11,3 @@ func _physics_process(delta: float) -> void:
   velocity.y += gravity * delta
   velocity.y = move_and_slide( velocity, Vector2.UP ).y
   velocity.x *= -1 if is_on_wall() else 1
-
-func _on_StompDetector_body_entered( body : Node ) -> void :
-  if body.global_position.y < $StompDetector.global_position.y :
-    print( "Enemy got stomped by the Player." )
-    queue_free()
