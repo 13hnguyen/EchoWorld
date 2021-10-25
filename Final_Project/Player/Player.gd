@@ -1,9 +1,6 @@
 extends KinematicBody2D
 
-var gravity  : = 3000.0
-var speed    : = Vector2( 300.0, 1250.0 )
-var stompImpluse : = 800.0
-var velocity : = Vector2.ZERO
+var speed    : = 300.0
 
 # load the bullet scene
 var bullet = preload("res://Bullet/Bullet.tscn")
@@ -28,37 +25,27 @@ func shootUp():
   b.transform = $BulletUpSpawnPos.global_transform
   b.rotation = $BulletUpSpawnPos.global_rotation
 
+# function for player movement: left, right, up, down, diagonal
 func _physics_process( delta : float ) -> void :
-  var isJumpInterrupted : = Input.is_action_just_released("jump") and velocity.y < 0.0
+  var direction: Vector2
+  direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+  direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 
-  var direction : = Vector2(
-    Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-    -1 if Input.is_action_just_pressed("jump") and is_on_floor() else 1
-   )
+  # if input is digital, normalize it for diagonal movement
+  if abs(direction.x) == 1 and abs(direction.y) == 1:
+    direction = direction.normalized()
 
-  velocity.x = speed.x * direction.x
+  var movement = speed * direction * delta
+  var _velocity = move_and_collide(movement) # velocity has an underscore on purpose
 
-  if isJumpInterrupted :
-    velocity.y = 0.0
-
-  elif direction.y == -1 :
-    velocity.y = -speed.y
-
-  else :
-    velocity.y += gravity * delta
-
-  velocity = move_and_slide( velocity, Vector2.UP )
-
-
+# function to detect whether the player has been hit by an enemy
 func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   print( "Player got hit by an Enemy." )
   gotoLevel()
 
-func _on_StompDetector_body_entered( _body : Node ) -> void :
-  velocity.y = -stompImpluse
-
+# code below is to handle loading different levels when the player reaches a portal
 const level = [
-  { 'StartPosition' : Vector2(  163, 181 ), 'CameraLimits' : [  -64, 3984 ] }
+  { 'StartPosition' : Vector2(  120 , 950 ), 'CameraLimits' : [  -64, 3984 ] }
   # repeat object above inside this array when we starting adding new levels
   ]
 
@@ -74,5 +61,3 @@ func gotoLevel( which : int = -1 ) -> void :
   position = level[which][ 'StartPosition' ]
   $Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
   $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
-
-#-----------------------------------------------------------------
