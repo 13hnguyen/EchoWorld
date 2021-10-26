@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Art/game_logo.png" type="Texture" id=2]
+[ext_resource path="res://Art/universe.png" type="Texture" id=3]
+[ext_resource path="res://Menus/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float speed : hint_range( 0.0, 1.0 );
+
+void fragment()
+{
+  vec2 shiftedUV = UV;
+
+  shiftedUV.x += TIME*speed;
+
+  COLOR = texture( TEXTURE, shiftedUV );
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/speed = null
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [ 1914.91 ]
+}
+
+[node name="Universe" parent="." instance=ExtResource( 5 )]
+material = SubResource( 2 )
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 1915.0
+margin_bottom = 1152.0
+texture = ExtResource( 3 )
+
+[node name="Logo" type="TextureRect" parent="."]
+margin_left = 217.233
+margin_top = 228.693
+margin_right = 1551.23
+margin_bottom = 411.693
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOptions" type="CanvasLayer" parent="."]
+
+[node name="NewGame" type="Button" parent="MenuOptions"]
+margin_left = 670.275
+margin_top = 497.218
+margin_right = 809.275
+margin_bottom = 520.218
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "NEW GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGame" type="Button" parent="MenuOptions"]
+margin_left = 670.275
+margin_top = 575.0
+margin_right = 809.275
+margin_bottom = 598.0
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "LOAD GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="MenuOptions"]
+margin_left = 668.688
+margin_top = 651.196
+margin_right = 807.688
+margin_bottom = 674.196
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MenuOptions/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="MenuOptions/Quit" to="." method="_on_Quit_pressed"]

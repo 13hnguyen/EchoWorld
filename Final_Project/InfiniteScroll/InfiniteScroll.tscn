@@ -24,8 +24,8 @@ shader_param/speed = null
 
 [node name="InfiniteScroll" type="TextureRect"]
 material = SubResource( 2 )
-margin_right = 1918.0
-margin_bottom = 1071.0
+margin_right = 1345.0
+margin_bottom = 683.0
 texture = ExtResource( 1 )
 stretch_mode = 2
 script = ExtResource( 2 )

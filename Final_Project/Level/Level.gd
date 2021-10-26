@@ -12,4 +12,4 @@ func _ready() -> void :
 func _input( event : InputEvent ) -> void :
   # If the user wants out, just end the game.
   if event.is_action_pressed( "ui_cancel" ) :
-    get_tree().quit( 0 )
+    var _scene = get_tree().change_scene("res://Menus/MainMenu.tscn")
