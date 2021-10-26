@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-chase.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/universe.png" type="Texture" id=7]
 [ext_resource path="res://Art/ground.png" type="Texture" id=8]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Art/stars.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -44,16 +45,23 @@ __meta__ = {
 }
 
 [node name="Universe" parent="." instance=ExtResource( 5 )]
-margin_left = -2.0
-margin_right = 3917.0
-margin_bottom = 1023.0
+margin_left = -64.0
+margin_right = 3979.0
+margin_bottom = 1090.0
 texture = ExtResource( 7 )
+speed = 0.005
+
+[node name="Stars" parent="." instance=ExtResource( 5 )]
+margin_right = 3909.0
+margin_bottom = 1031.0
+texture = ExtResource( 10 )
+speed = 0.015
 
 [node name="Ground" parent="." instance=ExtResource( 5 )]
 margin_right = 3915.0
 margin_bottom = 1080.0
 texture = ExtResource( 8 )
-speed = 0.05
+speed = 0.0
 
 [node name="Border Tilemap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
