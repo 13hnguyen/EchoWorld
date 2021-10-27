@@ -4,6 +4,13 @@ func _ready() -> void :
   # We don't want the same random numbers each time.
   randomize()
   # Start the background music playing.
+  var AsteroidGen = preload("res://Asteroid/AsteroidGenerator.tscn")
+  var asteroidGen = AsteroidGen.instance()
+  add_child(asteroidGen)
+
+  var RockGen = preload("res://Rock/RockGenerator.tscn")
+  var rockGen = RockGen.instance()
+  add_child(rockGen)
   $BackgndMusic.play()
   
 # Runs whenever there is input.  This allows us to check for
@@ -12,4 +19,4 @@ func _ready() -> void :
 func _input( event : InputEvent ) -> void :
   # If the user wants out, just end the game.
   if event.is_action_pressed( "ui_cancel" ) :
-    get_tree().quit( 0 )
+    var _scene = get_tree().change_scene("res://Menus/MainMenu.tscn")
