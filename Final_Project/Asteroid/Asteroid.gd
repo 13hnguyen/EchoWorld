@@ -6,6 +6,7 @@ var TravelVector = Vector2( -1500, 1200 )
 # Called when the node enters the scene tree for the first time.
 func _ready():
   
+  show()
   # Variate the asteroid trajectories
   TravelVector.x += rand_range(-300,300)
   TravelVector.y += rand_range(-200,200)
@@ -29,7 +30,14 @@ func _process(delta):
   
   
 func _on_PlayerDetector_body_entered( body : Node ) -> void :
-  print( "Asteroid hit Player." )
+  
+  # Check if body is a bullet, otherwise assume it's a player
+  if body.is_in_group("bullet") :
+    print( "Player hit asteroid." )
+    body.queue_free()
+  else :
+    print( "Asteroid hit Player." )
+    
   queue_free()
 
   

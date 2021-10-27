@@ -6,13 +6,13 @@ var SpawnMax = Vector2(200, 100)
 
 # This is the range of the ground that the asteroid will eventually hit
 #    and where the shadow will appear
-var GroundMin = 850 
+var GroundMin = 840 
 var GroundMax = 1000
 
 # Spawn rates
-var SpawnRate = 1.0 # Asteroids per sec
+var SpawnRate = 0.8 # Asteroids per sec
 var SpawnTime = 1.0 / SpawnRate
-var SpawnVariance = 0.1
+var SpawnVariance = 0.5
 
 # Keeps track of time since last asteroid was spawned
 var TimeSince = 0.0
@@ -27,7 +27,7 @@ var DrawDebugRect = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  TimeSince = SpawnTime + rand_range(0, SpawnVariance)
+  TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
   
   # Hide sprite, only used as a visual referrence in the editor
   $Sprite.hide()
@@ -39,7 +39,7 @@ func _process(delta):
   
   # Spawn asteroid
   if TimeSince <= 0.0 :
-    TimeSince = SpawnTime + rand_range(0, SpawnVariance)
+    TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
     
     # Create the asteroid ndoe and set it's position randomly within Min and Max
     var Asteroid = AsteroidNode.instance()

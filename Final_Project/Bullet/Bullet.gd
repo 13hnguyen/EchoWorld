@@ -11,6 +11,9 @@ func _on_Bullet_body_entered(body: Node) -> void:
   if body.is_in_group("enemy"):
     body.queue_free()
     print( "Enemy got hit by bullet" )
+  elif body.is_in_group("asteroid") :
+    body.queue_free()
+    print( "Asteroid got hit by bullet" )
   queue_free()
 
 # function to free the bullet once it leaves the screen (this is to avoid hitting other enemies off screen)
