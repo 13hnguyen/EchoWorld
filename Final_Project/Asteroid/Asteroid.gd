@@ -28,22 +28,12 @@ func _process(delta):
   # Since the shadow moves by relative location, only need to shorten the y
   $Shadow.position.y -= TravelVector.y * delta
   
-  
-func _on_PlayerDetector_body_entered( body : Node ) -> void :
-  
-  # Check if body is a bullet, otherwise assume it's a player
-  if body.is_in_group("bullet") :
-    print( "Player hit asteroid." )
-    body.queue_free()
-  else :
-    print( "Asteroid hit Player." )
-    
-  queue_free()
-
-  
 func _on_ShadowDetector_body_entered( body : Node ) -> void :
   
   # Only shadows should interact with 
   if is_a_parent_of(body) :
-    print( "Asteroid hit ground." )
+    
+    # TODO: spawn some type of node that animates an explosion that can
+    #             destroy the player and reset it
+    
     queue_free()
