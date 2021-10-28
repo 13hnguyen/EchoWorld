@@ -39,6 +39,7 @@ func _process(delta):
   
   # Spawn asteroid
   if TimeSince <= 0.0 :
+    #print("new asteroid")
     TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
     
     # Create the asteroid ndoe and set it's position randomly within Min and Max

@@ -1,8 +1,8 @@
 extends Node2D
 
 # These determine the rock spawn location
-var SpawnMin = Vector2(-200, -100)
-var SpawnMax = Vector2(200, 100)
+var SpawnMin = Vector2(0, -100)
+var SpawnMax = Vector2(0, 100)
 
 # This is the range of the ground that the rock will eventually hit
 #    and where the shadow will appear
@@ -10,9 +10,9 @@ var GroundMin = 850
 var GroundMax = 1000
 
 # Spawn rates
-var SpawnRate = 1.0 # Rocks per sec
-var SpawnTime = 1.0 / SpawnRate
-var SpawnVariance = 0.1
+var SpawnRate = 0.8 # Rocks per sec
+var SpawnTime = 3.0 / SpawnRate
+var SpawnVariance = 0.5
 
 # Keeps track of time since last rock was spawned
 var TimeSince = 0.0
@@ -22,12 +22,12 @@ var RockNode = preload("res://Rock/Rock.tscn")
 
 
 # Debug options
-var DrawDebugRect = false
+var DrawDebugRect = true
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  TimeSince = SpawnTime + rand_range(0, SpawnVariance)
+  TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
   
   # Hide sprite, only used as a visual referrence in the editor
   $Sprite.hide()
@@ -39,7 +39,8 @@ func _process(delta):
   
   # Spawn rock
   if TimeSince <= 0.0 :
-    TimeSince = SpawnTime + rand_range(0, SpawnVariance)
+    #print("new rock")
+    TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
     
     # Create the rock ndoe and set it's position randomly within Min and Max
     var Rock = RockNode.instance()
