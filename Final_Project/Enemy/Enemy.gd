@@ -1,7 +1,8 @@
 extends KinematicBody2D
-
-var gravity  : = 3000.0
-var speed    : = Vector2( 150.0, 1250.0 )
+#elevation of saucers
+var gravity  : = -0.5
+#speed of saucer
+var speed    : = Vector2( 450.0, 50.0 )
 var velocity : = Vector2.ZERO
 
 func _ready() -> void:
