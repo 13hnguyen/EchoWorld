@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var speed    : = 300.0
+var healthPoints : = 3
 
 # load the bullet scene
 var bullet = preload("res://Bullet/Bullet.tscn")
@@ -41,7 +42,13 @@ func _physics_process( delta : float ) -> void :
 # function to detect whether the player has been hit by an enemy
 func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   print( "Player got hit by an Enemy." )
-  gotoLevel()
+  healthPoints = healthPoints - 1
+  var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
+  HealthLabel.text = str(healthPoints)
+  if(healthPoints < 1):
+    healthPoints = 3
+    HealthLabel.text = str(healthPoints)
+    gotoLevel()
 
 # code below is to handle loading different levels when the player reaches a portal
 const level = [
