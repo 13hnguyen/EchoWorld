@@ -6,7 +6,7 @@ var speed = 750
 func _physics_process(delta):
     position += transform.x * speed * delta
 
-# function for determining if the bullet hit an enemy and freeing
+# function for determining if the bullet hit an enemy or an asteroid and freeing
 func _on_Bullet_body_entered(body: Node) -> void:
   if body.is_in_group("enemy"):
     body.queue_free()

@@ -35,7 +35,7 @@ shader_param/speed = null
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=9]
 
@@ -44,7 +44,7 @@ shader_param/speed = null
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_horizontal_guides_": [  ],
+"_edit_horizontal_guides_": [ 657.517, 558.292 ],
 "_edit_vertical_guides_": [ 1914.91 ]
 }
 
@@ -74,10 +74,10 @@ __meta__ = {
 [node name="MenuOptions" type="CanvasLayer" parent="."]
 
 [node name="NewGame" type="Button" parent="MenuOptions"]
-margin_left = 670.275
-margin_top = 497.218
-margin_right = 809.275
-margin_bottom = 520.218
+margin_left = 452.275
+margin_top = 513.218
+margin_right = 591.275
+margin_bottom = 536.218
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
@@ -89,15 +89,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoadGame" type="Button" parent="MenuOptions"]
-margin_left = 670.275
-margin_top = 575.0
-margin_right = 809.275
-margin_bottom = 598.0
+[node name="LoadGame" type="MenuButton" parent="MenuOptions"]
+margin_left = 454.275
+margin_top = 611.0
+margin_right = 593.275
+margin_bottom = 634.0
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
 text = "LOAD GAME"
@@ -105,11 +105,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Controls" type="MenuButton" parent="MenuOptions"]
+margin_left = 839.087
+margin_top = 512.377
+margin_right = 978.087
+margin_bottom = 535.377
+rect_scale = Vector2( 3, 3 )
+focus_mode = 2
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "CONTROLS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Quit" type="Button" parent="MenuOptions"]
-margin_left = 668.688
-margin_top = 651.196
-margin_right = 807.688
-margin_bottom = 674.196
+margin_left = 828.275
+margin_top = 611.101
+margin_right = 967.275
+margin_bottom = 634.101
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 9 )
@@ -122,4 +139,6 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="MenuOptions/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="MenuOptions/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="MenuOptions/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="MenuOptions/Quit" to="." method="_on_Quit_pressed"]
