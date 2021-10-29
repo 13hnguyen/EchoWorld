@@ -47,10 +47,10 @@ func _process(delta):
     add_child(Rock)
     
     # Randomly hit somewhere on the ground
-    var GroundHitY = rand_range(GroundMin, GroundMax)
+    var _GroundHitY = rand_range(GroundMin, GroundMax)
     
     # Make the hit relative to the generator
-    GroundHitY -= position.y
+    _GroundHitY -= position.y
     
     # Randomly pick a location in the relative rect
     var x = rand_range(SpawnMin.x, SpawnMax.x)

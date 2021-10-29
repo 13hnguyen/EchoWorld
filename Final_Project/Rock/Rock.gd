@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # How fast the astroid should travel
-var TravelVector = Vector2( -300, 0 )
+var TravelVector = Vector2( -200, 0 )
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +19,6 @@ func _process(delta):
   position = position + TravelVector * delta
   
   
-func _on_PlayerDetector_body_entered( body : Node ) -> void :
+func _on_PlayerDetector_body_entered( _body : Node ) -> void :
   print( "Rock hit Player." )
-  queue_free()
+  #Do not free the rock if it hits the player. Let is keep moving across screen

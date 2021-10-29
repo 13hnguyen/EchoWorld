@@ -20,6 +20,8 @@ func _on_Bullet_body_entered(body: Node) -> void:
     ScoreLabel.text = str(newScore)
     body.queue_free()
     print( "Asteroid got hit by bullet" )
+  elif body.is_in_group("rock") :
+    body.queue_free()
   queue_free()
 
 # function to free the bullet once it leaves the screen (this is to avoid hitting other enemies off screen)

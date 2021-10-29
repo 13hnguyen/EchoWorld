@@ -54,9 +54,9 @@ stream = ExtResource( 1 )
 
 [node name="Universe" parent="." instance=ExtResource( 5 )]
 material = SubResource( 2 )
-margin_left = -2.0
+margin_left = -2.84094
 margin_top = -2.0
-margin_right = 1915.0
+margin_right = 1914.16
 margin_bottom = 1152.0
 texture = ExtResource( 3 )
 speed = 0.05
@@ -89,6 +89,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PlayerCreation" type="ConfirmationDialog" parent="MenuOptions/NewGame"]
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.4
+anchor_bottom = 0.3
+margin_left = -25.3333
+margin_top = -19.3333
+margin_right = 174.667
+margin_bottom = 80.6667
+rect_scale = Vector2( 2, 2 )
+window_title = "Player Creation"
+dialog_text = "Enter Player Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="MenuOptions/NewGame/PlayerCreation"]
+margin_left = 8.0
+margin_top = 22.0
+margin_right = 192.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 183, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="LoadGame" type="MenuButton" parent="MenuOptions"]
 margin_left = 454.275
 margin_top = 611.0
@@ -105,19 +131,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Controls" type="MenuButton" parent="MenuOptions"]
+[node name="Controls" type="Button" parent="MenuOptions"]
 margin_left = 839.087
 margin_top = 512.377
 margin_right = 978.087
 margin_bottom = 535.377
 rect_scale = Vector2( 3, 3 )
-focus_mode = 2
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
 text = "CONTROLS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerControls" type="AcceptDialog" parent="MenuOptions/Controls"]
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.4
+anchor_bottom = 0.3
+margin_left = 40.4
+margin_top = -19.053
+margin_right = 240.4
+margin_bottom = 80.947
+rect_scale = Vector2( 2, 2 )
+window_title = "Controls"
+dialog_text = "MOVE - WASD
+SHOOT - F,G"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,6 +181,7 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="MenuOptions/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="confirmed" from="MenuOptions/NewGame/PlayerCreation" to="." method="_on_PlayerCreation_confirmed"]
 [connection signal="pressed" from="MenuOptions/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="MenuOptions/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="MenuOptions/Quit" to="." method="_on_Quit_pressed"]

@@ -9,7 +9,9 @@ extents = Vector2( 48.374, 47.8929 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 48.374, 47.0992 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Rock" type="KinematicBody2D" groups=[
+"rock",
+]]
 light_mask = 8
 collision_layer = 12
 collision_mask = 2
