@@ -11,13 +11,17 @@ func _ready():
   TravelVector.x += rand_range(-300,300)
   TravelVector.y += rand_range(-200,200)
   
-  $Anchor.set_rotation_degrees( rand_range(-30, 30) )
+  var Rotation = rand_range(-30, 30)
+  $Anchor.set_rotation_degrees( Rotation )
   
   var Scale = rand_range(0.8, 1.2)
   
   $Anchor.set_scale( Vector2(Scale, Scale) )
   $Shadow.set_scale( Vector2(Scale, Scale) )
-
+  
+  $Trail.set_rotation_degrees( rad2deg( atan(TravelVector.y / TravelVector.x) ) )
+  $Trail.set_scale( Scale * $Trail.get_scale() )
+  $Trail.position *= Scale
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
