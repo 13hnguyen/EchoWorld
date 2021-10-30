@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-chase.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Art/ground.png" type="Texture" id=8]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Art/stars.png" type="Texture" id=10]
+[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -58,10 +59,10 @@ texture = ExtResource( 10 )
 speed = 0.015
 
 [node name="Ground" parent="." instance=ExtResource( 5 )]
-margin_left = -3.41425
+margin_left = -3.0
 margin_top = -48.0
-margin_right = 3911.59
-margin_bottom = 1032.0
+margin_right = 3912.0
+margin_bottom = 1024.0
 texture = ExtResource( 8 )
 speed = 0.0
 
@@ -155,3 +156,9 @@ text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1.5874, 1.58733 )

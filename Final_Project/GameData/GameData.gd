@@ -27,3 +27,6 @@ func _ready() -> void :
 
   data = result.result
   print(data)
+
+func handlenewPlayerEntered(player) :
+  print(player)

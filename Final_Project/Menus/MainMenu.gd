@@ -1,5 +1,7 @@
 extends Node2D
 
+signal newPlayerEntered(player)
+
 # function to start the background music playing.
 func _ready() -> void :
   $MenuMusic.play()
@@ -11,8 +13,13 @@ func _on_NewGame_pressed() -> void:
 
 # function when the player clicks "OK" from dialog menu to create new player and load level
 func _on_PlayerCreation_confirmed() -> void:
-  print("player created. starting level")
+  var playerName = find_node("PlayerName").text.strip_edges()
+  print(playerName)
+  if playerName.empty():
+    playerName = "John Doe"
+  emit_signal("newPlayerEntered",playerName)
   var _scene = get_tree().change_scene("res://Level/Level.tscn")
+  print("player created. starting level")
 
 # function to fill in player names for dropdown when clicked "load game"
 func _on_LoadGame_pressed() -> void:
