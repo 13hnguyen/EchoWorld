@@ -3,6 +3,7 @@ extends Node
 func _ready() -> void :
   # We don't want the same random numbers each time.
   randomize()
+  #print_tree_pretty()
 
   # Start the asteroid generation
   var AsteroidGen = preload("res://Asteroid/AsteroidGenerator.tscn")

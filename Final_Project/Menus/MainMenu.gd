@@ -1,7 +1,5 @@
 extends Node2D
 
-signal newPlayerEntered(player)
-
 # function to start the background music playing.
 func _ready() -> void :
   $MenuMusic.play()
@@ -13,11 +11,12 @@ func _on_NewGame_pressed() -> void:
 
 # function when the player clicks "OK" from dialog menu to create new player and load level
 func _on_PlayerCreation_confirmed() -> void:
-  var playerName = find_node("PlayerName").text.strip_edges()
-  print(playerName)
+  var playerName = find_node("PlayerNameCreate").text.strip_edges()
   if playerName.empty():
+    print("No name entered. Defaulting to John Doe")
     playerName = "John Doe"
-  emit_signal("newPlayerEntered",playerName)
+  print("player name entered from new game: " + playerName)
+  GameData.saveNewPlayer(playerName)
   var _scene = get_tree().change_scene("res://Level/Level.tscn")
   print("player created. starting level")
 
@@ -31,9 +30,23 @@ func _on_LoadGame_pressed() -> void:
     #print(n.name)
     $MenuOptions/LoadGame.get_popup().add_item("Player: " + n.name)
 
+# function to popup player deletion from main menu when click "delete game"
+func _on_DeleteGame_pressed() -> void:
+  print("deleting player data")
+  get_node("MenuOptions/DeleteGame/PlayerDeletion").popup()
+
+func _on_PlayerDeletion_confirmed() -> void:
+  var deleteName = find_node("PlayerNameDelete").text.strip_edges()
+  if deleteName.empty():
+    print("No name entered. Cannot delete player without a name")
+    deleteName = ""
+  else :
+    print("player name entered to delete: " + deleteName)
+    GameData.deletePlayer(deleteName)
+
 # function to show movement controls from main menu when clicked "controls"
 func _on_Controls_pressed() -> void:
-  print("movement controls displaying")
+  print("game controls displaying")
   get_node("MenuOptions/Controls/PlayerControls").popup()
 
 # function to quit the game from main menu when clicked "quit"
