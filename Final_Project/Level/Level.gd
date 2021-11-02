@@ -19,7 +19,15 @@ func _ready() -> void :
     
   get_child(canvasIndex).add_child(asteroidGen)
 
-  # Start the rock generation
+  #Start the enemy generation
+  var EnemyGen = preload("res://Enemy/EnemyGenerator.tscn")
+  var enemyGen = EnemyGen.instance()
+  enemyGen.position = Vector2(2000, 800)
+  
+  # Add enemybgenerator to canvas layer since it follows the player  
+  get_child(canvasIndex).add_child(enemyGen)
+  
+  #Start the rock generation
   #var RockGen = preload("res://Rock/RockGenerator.tscn")
   #var rockGen = RockGen.instance()
   #rockGen.position = Vector2(2000, 870)
@@ -27,6 +35,7 @@ func _ready() -> void :
   # Add rock generator to canvas layer since it follows the player
     
   #get_child(canvasIndex).add_child(rockGen)
+  
   
   # Start the background music playing.
   $BackgndMusic.play()

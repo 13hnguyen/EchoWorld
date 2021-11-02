@@ -4,9 +4,12 @@
 [ext_resource path="res://Art/alian.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.885, 38 )
+extents = Vector2( 36.8, 39 )
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=[
+"enemy",
+]]
+position = Vector2( -2, 16 )
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 1 )
@@ -19,5 +22,5 @@ position = Vector2( 0, -40 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -38 )
+position = Vector2( 0, -39 )
 shape = SubResource( 1 )

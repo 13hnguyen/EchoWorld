@@ -1,6 +1,6 @@
 extends KinematicBody2D
 #elevation of saucers
-var gravity  : = -0.5
+var gravity  : = -10.0
 #speed of saucer
 var speed    : = Vector2( 450.0, 50.0 )
 var velocity : = Vector2.ZERO
