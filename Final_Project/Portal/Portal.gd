@@ -3,6 +3,9 @@ extends Area2D
 # Which level am I the portal for?
 export var whichLevel : = 0
 
+func _ready() -> void:
+  GameData.savePlayerObj.level = whichLevel; # set the initial level for the player
+
 # The only body that could possibly enter this area is the
 #   Player (why is that so?).  All we have to do is tell the
 #   Player to go to the next level.

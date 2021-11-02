@@ -1,18 +1,1 @@
-[
-  {
-    "players" : [
-      {  
-	 "name" : "John",
-         "level" : 0,
-         "score" : 0,
-         "health" : 3
-      },
-      {
-  	 "name" : "Mary",
-         "level" : 0,
-         "score" : 2,
-         "health" : 2
-      }
-    ]
-  }
-]
+[{"players":[{"health":3,"level":1,"name":"Amanda","score":320},{"health":3,"level":1,"name":"Reed","score":240}]}]

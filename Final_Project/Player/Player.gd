@@ -3,6 +3,11 @@ extends KinematicBody2D
 var speed    : = 300.0
 var healthPoints : = 3
 
+func _ready() -> void:
+  GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
+  #print("Health:")
+  #print(GameData.savePlayerObj.health)
+
 # load the bullet scene
 var bullet = preload("res://Bullet/Bullet.tscn")
 
@@ -45,6 +50,9 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
+  GameData.savePlayerObj.health = healthPoints; # update the health points for the player
+  #print("Health:")
+  #print(GameData.savePlayerObj.health)
   if(healthPoints < 1):
     healthPoints = 3
     HealthLabel.text = str(healthPoints)
@@ -59,6 +67,11 @@ const level = [
 var currentLevel : = 0
 
 func gotoLevel( which : int = -1 ) -> void :
+  GameData.savePlayerObj.level = which; # update the level for the player
+  #print("Level")
+  #print(GameData.savePlayerObj.level)
+  GameData.savePlayerData(); # call function in gamedata.gd to save player data when a portal is reached
+  
   if which < 0 :
     which = currentLevel
 

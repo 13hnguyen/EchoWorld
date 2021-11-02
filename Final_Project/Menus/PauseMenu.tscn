@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menus/PauseMenu.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="PauseMenu" type="Node2D"]
+pause_mode = 2
+z_index = 20
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 664.418 ]
+}
+
+[node name="PauseBackground" type="TextureRect" parent="."]
+margin_left = 410.471
+margin_top = 139.485
+margin_right = 1473.47
+margin_bottom = 748.485
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 560.018
+margin_top = 310.227
+margin_right = 653.018
+margin_bottom = 327.227
+rect_scale = Vector2( 8, 8 )
+custom_colors/font_color = Color( 0.207843, 0.858824, 0.294118, 1 )
+text = "GAME PAUSED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="."]
+margin_left = 596.474
+margin_top = 512.0
+margin_right = 676.474
+margin_bottom = 532.0
+rect_scale = Vector2( 4, 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.639216, 0.796078, 0.145098, 1 )
+text = "CONTINUE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 1001.51
+margin_top = 512.498
+margin_right = 1061.51
+margin_bottom = 532.498
+rect_scale = Vector2( 4, 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.639216, 0.796078, 0.145098, 1 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
