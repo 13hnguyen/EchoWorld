@@ -21,7 +21,6 @@ func _process(delta):
   if Mod.a <= 0.5 and Mod.a >= DeathAlpha:
     $CollisionShape2D.set_scale(Vector2(0,0))
   elif Mod.a < DeathAlpha :
-    print("Free!")
     queue_free()
 
 
@@ -29,4 +28,3 @@ func _on_PlayerDetector_body_entered( body : Node ):
   
   if ! body.is_in_group("bullet") :
     $CollisionShape2D.set_scale(Vector2(0,0))
-    print("Shrunk")
