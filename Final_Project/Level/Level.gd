@@ -20,9 +20,9 @@ func _ready() -> void :
   get_child(canvasIndex).add_child(asteroidGen)
 
   # Start the rock generation
-  var RockGen = preload("res://Rock/RockGenerator.tscn")
-  var rockGen = RockGen.instance()
-  rockGen.position = Vector2(2000, 870)
+  #var RockGen = preload("res://Rock/RockGenerator.tscn")
+  #var rockGen = RockGen.instance()
+  #rockGen.position = Vector2(2000, 870)
   
   # Add rock generator to canvas layer since it follows the player
     
