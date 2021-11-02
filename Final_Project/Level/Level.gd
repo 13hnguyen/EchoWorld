@@ -26,7 +26,7 @@ func _ready() -> void :
   
   # Add rock generator to canvas layer since it follows the player
     
-  get_child(canvasIndex).add_child(rockGen)
+  #get_child(canvasIndex).add_child(rockGen)
   
   # Start the background music playing.
   $BackgndMusic.play()
