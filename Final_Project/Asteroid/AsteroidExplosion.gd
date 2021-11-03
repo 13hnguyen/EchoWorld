@@ -18,13 +18,21 @@ func _process(_delta):
   var Mod = lerp(get_modulate(), Color(1,1,1,0), 0.08)
   set_modulate(Mod)
   
+  if $CollsionShape2D == null :
+    return
+  
+  # free the collision shape and player detector, no need to hit player more than once
   if Mod.a <= 0.5 and Mod.a >= DeathAlpha:
-    $CollisionShape2D.set_scale(Vector2(0,0))
+    $CollisionShape2D.queue_free()
+    $PlayerDetector.queue_free()
+    
   elif Mod.a < DeathAlpha :
     queue_free()
 
 
 func _on_PlayerDetector_body_entered( body : Node ):
   
+  # free the collision shape and player detector, no need to hit player more than once
   if ! body.is_in_group("bullet") :
-    $CollisionShape2D.set_scale(Vector2(0,0))
+    $CollisionShape2D.queue_free()
+    $PlayerDetector.queue_free()
