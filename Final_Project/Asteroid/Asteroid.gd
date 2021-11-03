@@ -32,6 +32,8 @@ func _process(delta):
   # Since the shadow moves by relative location, only need to shorten the y
   $Shadow.position.y -= TravelVector.y * delta
   
+  $Anchor/Sprite.set_modulate(lerp($Anchor/Sprite.get_modulate(), Color(1,0,0,1), 0.008))
+  
 func _on_ShadowDetector_body_entered( body : Node ) -> void :
   
   # Only shadows should interact with 
