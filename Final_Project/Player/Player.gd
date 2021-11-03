@@ -56,7 +56,8 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   if(healthPoints < 1):
     healthPoints = 3
     HealthLabel.text = str(healthPoints)
-    gotoLevel()
+    var _scene = get_tree().change_scene("res://Menus/GameOverMenu.tscn")
+    #gotoLevel()
 
 # code below is to handle loading different levels when the player reaches a portal
 const level = [
