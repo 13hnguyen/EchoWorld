@@ -4,9 +4,10 @@ var speed    : = 300.0
 var healthPoints : = 3
 
 func _ready() -> void:
-  GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
-  #print("Health:")
-  #print(GameData.savePlayerObj.health)
+  if GameData.loadGame == false:
+    GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
+    #print("Health:")
+    #print(GameData.savePlayerObj.health)
 
 # load the bullet scene
 var bullet = preload("res://Bullet/Bullet.tscn")
@@ -53,10 +54,10 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   GameData.savePlayerObj.health = healthPoints; # update the health points for the player
   #print("Health:")
   #print(GameData.savePlayerObj.health)
-  if(healthPoints < 1):
-    healthPoints = 3
-    HealthLabel.text = str(healthPoints)
-    gotoLevel()
+  if(healthPoints == 0) :
+    # removed old code that called goToLevel when health = 0. the goToLevel should only be called when you enter a PORTAL. it should never be called at any other time.
+    # when hp = 0, show popup die accept dialog screen and exit to main menu
+    print("Player health = 0. JP your code should go here for player dying")
 
 # code below is to handle loading different levels when the player reaches a portal
 const level = [

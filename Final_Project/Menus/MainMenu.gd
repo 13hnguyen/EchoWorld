@@ -6,7 +6,7 @@ func _ready() -> void :
 
 # function to popup player creation from main menu when clicked "new game"
 func _on_NewGame_pressed() -> void:
-  print("creating new player")
+  print("new game menu")
   get_node("MenuOptions/NewGame/PlayerCreation").popup()
 
 # function when the player clicks "OK" from dialog menu to create new player and load level
@@ -22,17 +22,24 @@ func _on_PlayerCreation_confirmed() -> void:
 
 # function to fill in player names for dropdown when clicked "load game"
 func _on_LoadGame_pressed() -> void:
-  print("load game pressed")
-  $MenuOptions/LoadGame.get_popup().clear() # remove previous popup items
+  print("load game menu")
+  $MenuOptions/LoadGame/LoadPlayer/PlayerList.clear()
+  get_node("MenuOptions/LoadGame/LoadPlayer").popup()
   #print(GameData.data)
   for n in GameData.data[0].players:
     #print("n = ",n)
     #print(n.name)
-    $MenuOptions/LoadGame.get_popup().add_item("Player: " + n.name)
+    $MenuOptions/LoadGame/LoadPlayer/PlayerList.add_item("Player: " + n.name,load("res://Art/rover.png"),true)
+
+func _on_PlayerList_item_activated(index: int) -> void:
+  #print(index)
+  get_node("MenuOptions/LoadGame/LoadPlayer").hide()
+  print("player selected to load")
+  GameData.loadPlayer(index)
 
 # function to popup player deletion from main menu when click "delete game"
 func _on_DeleteGame_pressed() -> void:
-  print("deleting player data")
+  print("delete game menu")
   get_node("MenuOptions/DeleteGame/PlayerDeletion").popup()
 
 func _on_PlayerDeletion_confirmed() -> void:
@@ -46,7 +53,7 @@ func _on_PlayerDeletion_confirmed() -> void:
 
 # function to show movement controls from main menu when clicked "controls"
 func _on_Controls_pressed() -> void:
-  print("game controls displaying")
+  print("game controls menu")
   get_node("MenuOptions/Controls/PlayerControls").popup()
 
 # function to quit the game from main menu when clicked "quit"

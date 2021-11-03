@@ -3,7 +3,16 @@ extends Node
 func _ready() -> void :
   # We don't want the same random numbers each time.
   randomize()
-  #print_tree_pretty()
+  var score = get_node("On Screen Labels/PlayerScoreNum")
+  var hp = get_node("On Screen Labels/PlayerHP")
+  
+  # loadGame will be equal to true if the level was started from loaded game data
+  if GameData.loadGame == true :
+    score.set_text(str(GameData.savePlayerObj.score))
+    hp.set_text(str(GameData.savePlayerObj.health))
+  else :
+    score.set_text(str(0))
+    hp.set_text(str(3))
 
   # Start the asteroid generation
   var AsteroidGen = preload("res://Asteroid/AsteroidGenerator.tscn")

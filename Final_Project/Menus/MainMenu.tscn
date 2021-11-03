@@ -101,7 +101,7 @@ margin_right = 174.667
 margin_bottom = 80.6667
 rect_scale = Vector2( 2, 2 )
 window_title = "Player Creation"
-dialog_text = "Enter Player Name"
+dialog_text = "Enter Player Name:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -116,7 +116,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoadGame" type="MenuButton" parent="MenuOptions"]
+[node name="LoadGame" type="Button" parent="MenuOptions"]
 margin_left = 260.364
 margin_top = 613.088
 margin_right = 399.364
@@ -128,6 +128,28 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
 text = "LOAD GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadPlayer" type="WindowDialog" parent="MenuOptions/LoadGame"]
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.4
+anchor_bottom = 0.3
+margin_left = -24.6
+margin_top = -52.9
+margin_right = 175.4
+margin_bottom = 54.1
+rect_scale = Vector2( 2, 2 )
+window_title = "Load Player (double click name)"
+
+[node name="PlayerList" type="ItemList" parent="MenuOptions/LoadGame/LoadPlayer"]
+margin_right = 249.0
+margin_bottom = 107.0
+allow_reselect = true
+auto_height = true
+icon_scale = 0.25
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -153,10 +175,10 @@ anchor_left = 0.4
 anchor_top = 0.3
 anchor_right = 0.4
 anchor_bottom = 0.3
-margin_left = -25.3333
-margin_top = -19.3333
-margin_right = 174.667
-margin_bottom = 80.6667
+margin_left = -25.6
+margin_top = -18.9
+margin_right = 218.4
+margin_bottom = 93.1
 rect_scale = Vector2( 2, 2 )
 window_title = "Player Deletion"
 dialog_text = "Enter Player Name to Delete Game.
@@ -169,7 +191,7 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 39.0
 margin_right = 236.0
-margin_bottom = 64.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 183, 20 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,6 +266,7 @@ __meta__ = {
 [connection signal="pressed" from="MenuOptions/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="confirmed" from="MenuOptions/NewGame/PlayerCreation" to="." method="_on_PlayerCreation_confirmed"]
 [connection signal="pressed" from="MenuOptions/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="item_activated" from="MenuOptions/LoadGame/LoadPlayer/PlayerList" to="." method="_on_PlayerList_item_activated"]
 [connection signal="pressed" from="MenuOptions/DeleteGame" to="." method="_on_DeleteGame_pressed"]
 [connection signal="confirmed" from="MenuOptions/DeleteGame/PlayerDeletion" to="." method="_on_PlayerDeletion_confirmed"]
 [connection signal="pressed" from="MenuOptions/Controls" to="." method="_on_Controls_pressed"]
