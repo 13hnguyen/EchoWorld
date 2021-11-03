@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-chase.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
 [ext_resource path="res://Level/Level.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/universe.png" type="Texture" id=7]
 [ext_resource path="res://Art/ground.png" type="Texture" id=8]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
@@ -83,31 +82,6 @@ tile_data = PoolIntArray( -327681, 0, 0, -393155, 0, 0, -262145, 0, 0, -327619, 
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 92, 954 )
-
-[node name="Enemy" parent="." groups=[
-"enemy",
-] instance=ExtResource( 6 )]
-position = Vector2( 1965.54, 617.57 )
-
-[node name="Enemy2" parent="." groups=[
-"enemy",
-] instance=ExtResource( 6 )]
-position = Vector2( 3121.61, 648.015 )
-
-[node name="Enemy4" parent="." groups=[
-"enemy",
-] instance=ExtResource( 6 )]
-position = Vector2( 1060.4, 422.4 )
-
-[node name="Enemy5" parent="." groups=[
-"enemy",
-] instance=ExtResource( 6 )]
-position = Vector2( 180, 688.8 )
-
-[node name="Enemy6" parent="." groups=[
-"enemy",
-] instance=ExtResource( 6 )]
-position = Vector2( 3740.38, 430.53 )
 
 [node name="Portal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 3852.38, 998.53 )
