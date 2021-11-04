@@ -15,4 +15,4 @@ func _on_Portal_body_entered( body : PhysicsBody2D ) -> void :
   # When the portal on a level is entered by the player, we tell
   #   the player to go to the next level, which is our level
   #   number plus 1.
-  body.gotoLevel( whichLevel + 1 )
+  body.gotoScene( whichLevel + 1 )
