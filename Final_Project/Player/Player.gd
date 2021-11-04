@@ -65,20 +65,21 @@ const level = [
   # repeat object above inside this array when we starting adding new levels
   ]
 
-var currentLevel : = 0
+#var currentLevel : = 0
 
-func gotoLevel( which : int = -1 ) -> void :
+func gotoScene( which : int = -1 ) -> void :
   GameData.savePlayerObj.level = which; # update the level for the player
   #print("Level")
   #print(GameData.savePlayerObj.level)
   GameData.savePlayerData(); # call function in gamedata.gd to save player data when a portal is reached
+  var _scene = get_tree().change_scene("res://Menus/PlanetMenu.tscn")
   
-  if which < 0 :
-    which = currentLevel
+  #if which < 0 :
+    #which = currentLevel
 
-  if which >= level.size() :
-    print( "Finished last level, so going back to the beginning." )
-    which = 0
-  position = level[which][ 'StartPosition' ]
-  $Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
-  $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
+  #if which >= level.size() :
+    #print( "Finished last level, so going back to the beginning." )
+    #which = 0
+  #position = level[which][ 'StartPosition' ]
+  #$Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
+  #$Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
