@@ -1,0 +1,238 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Art/black_space_stars.PNG" type="Texture" id=1]
+[ext_resource path="res://Art/earth.PNG" type="Texture" id=2]
+[ext_resource path="res://Menus/PlanetMenu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="PlanetMenu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BlackStarsBackground" type="TextureRect" parent="."]
+margin_right = 1800.0
+margin_bottom = 1182.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnMainMenu" type="Button" parent="."]
+margin_left = 42.0
+margin_top = 20.0
+margin_right = 176.0
+margin_bottom = 35.0
+rect_scale = Vector2( 4, 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+custom_colors/font_color_pressed = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "Return to Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="."]
+margin_left = 38.0
+margin_top = 108.0
+margin_right = 95.0
+margin_bottom = 123.0
+rect_scale = Vector2( 4, 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+custom_colors/font_color_pressed = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 0" type="Label" parent="."]
+margin_left = 118.699
+margin_top = 326.831
+margin_right = 177.699
+margin_bottom = 342.831
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet0" type="TextureButton" parent="."]
+margin_left = 134.456
+margin_top = 367.818
+margin_right = 332.456
+margin_bottom = 565.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 1" type="Label" parent="."]
+margin_left = 263.153
+margin_top = 731.619
+margin_right = 322.153
+margin_bottom = 747.619
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet1" type="TextureButton" parent="."]
+margin_left = 278.456
+margin_top = 785.818
+margin_right = 476.456
+margin_bottom = 983.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 2" type="Label" parent="."]
+margin_left = 479.039
+margin_top = 417.313
+margin_right = 538.039
+margin_bottom = 433.313
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet2" type="TextureButton" parent="."]
+margin_left = 488.456
+margin_top = 461.818
+margin_right = 686.456
+margin_bottom = 659.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 3" type="Label" parent="."]
+margin_left = 725.086
+margin_top = 791.94
+margin_right = 784.086
+margin_bottom = 807.94
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet3" type="TextureButton" parent="."]
+margin_left = 738.456
+margin_top = 835.818
+margin_right = 936.456
+margin_bottom = 1033.82
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 4" type="Label" parent="."]
+margin_left = 880.652
+margin_top = 264.923
+margin_right = 939.652
+margin_bottom = 280.923
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet4" type="TextureButton" parent="."]
+margin_left = 896.456
+margin_top = 305.818
+margin_right = 1094.46
+margin_bottom = 503.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 5" type="Label" parent="."]
+margin_left = 1110.82
+margin_top = 569.704
+margin_right = 1169.82
+margin_bottom = 585.704
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet5" type="TextureButton" parent="."]
+margin_left = 1126.46
+margin_top = 615.818
+margin_right = 1324.46
+margin_bottom = 813.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 6" type="Label" parent="."]
+margin_left = 1344.17
+margin_top = 256.986
+margin_right = 1403.17
+margin_bottom = 272.986
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet6" type="TextureButton" parent="."]
+margin_left = 1364.46
+margin_top = 301.818
+margin_right = 1562.46
+margin_bottom = 499.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet 7" type="Label" parent="."]
+margin_left = 1495.16
+margin_top = 684.869
+margin_right = 1551.16
+margin_bottom = 702.869
+rect_scale = Vector2( 2.5, 2.5 )
+text = "Planet 7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet7" type="TextureButton" parent="."]
+margin_left = 1514.46
+margin_top = 731.818
+margin_right = 1712.46
+margin_bottom = 929.818
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ReturnMainMenu" to="." method="_on_ReturnMainMenu_pressed"]

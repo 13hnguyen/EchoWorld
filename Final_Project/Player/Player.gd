@@ -4,9 +4,10 @@ var speed    : = 300.0
 var healthPoints : = 3
 
 func _ready() -> void:
-  GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
-  #print("Health:")
-  #print(GameData.savePlayerObj.health)
+  if GameData.loadGame == false:
+    GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
+    #print("Health:")
+    #print(GameData.savePlayerObj.health)
 
 # load the bullet scene
 var bullet = preload("res://Bullet/Bullet.tscn")
@@ -53,11 +54,10 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   GameData.savePlayerObj.health = healthPoints; # update the health points for the player
   #print("Health:")
   #print(GameData.savePlayerObj.health)
-  if(healthPoints < 1):
-    healthPoints = 3
-    HealthLabel.text = str(healthPoints)
-    var _scene = get_tree().change_scene("res://Menus/GameOverMenu.tscn")
-    #gotoLevel()
+  if(healthPoints == 0) :
+    # removed old code that called goToLevel when health = 0. the goToLevel should only be called when you enter a PORTAL. it should never be called at any other time.
+    # when hp = 0, show popup die accept dialog screen and exit to main menu
+    print("Player health = 0. JP your code should go here for player dying")
 
 # code below is to handle loading different levels when the player reaches a portal
 const level = [
@@ -65,20 +65,21 @@ const level = [
   # repeat object above inside this array when we starting adding new levels
   ]
 
-var currentLevel : = 0
+#var currentLevel : = 0
 
-func gotoLevel( which : int = -1 ) -> void :
+func gotoScene( which : int = -1 ) -> void :
   GameData.savePlayerObj.level = which; # update the level for the player
   #print("Level")
   #print(GameData.savePlayerObj.level)
   GameData.savePlayerData(); # call function in gamedata.gd to save player data when a portal is reached
+  var _scene = get_tree().change_scene("res://Menus/PlanetMenu.tscn")
   
-  if which < 0 :
-    which = currentLevel
+  #if which < 0 :
+    #which = currentLevel
 
-  if which >= level.size() :
-    print( "Finished last level, so going back to the beginning." )
-    which = 0
-  position = level[which][ 'StartPosition' ]
-  $Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
-  $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
+  #if which >= level.size() :
+    #print( "Finished last level, so going back to the beginning." )
+    #which = 0
+  #position = level[which][ 'StartPosition' ]
+  #$Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
+  #$Camera2D.limit_right = level[which][ 'CameraLimits' ][1]

@@ -32,6 +32,9 @@ func _process(delta):
   # Since the shadow moves by relative location, only need to shorten the y
   $Shadow.position.y -= TravelVector.y * delta
   
+  # Slowly make front of asteroid burn red
+  $Anchor/SpriteBlaze.set_modulate(lerp($Anchor/SpriteBlaze.get_modulate(), Color(1,0,0,1), 0.01))
+  
 func _on_ShadowDetector_body_entered( body : Node ) -> void :
   
   # Only shadows should interact with 

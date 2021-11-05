@@ -8,6 +8,7 @@ const filename_path = "res://GameData/gamedata.json"
 var data = {}; # object that is saved/loaded to/from json file
 var newPlayerObj = {}; # object for new player creation
 var savePlayerObj = {}; # object for saving data for existing player
+var loadGame = false; # default is false because the default is expected to be a new game
 
 func _ready() -> void :
   savePlayerObj.score = -1; # used to check if the player earned any points from the level in savePlayerData function
@@ -38,6 +39,7 @@ func _ready() -> void :
 # function to save the new player to the json file
 func saveNewPlayer(player) -> void :
   print("new player name received: " + player)
+  loadGame = false;
   savePlayerObj.name = player; # update the current player name to be seen outside the scope of this function
 
   # create a new player object in json format
@@ -89,6 +91,34 @@ func savePlayerData() -> void :
   file.store_line(to_json(data))
   file.close()
   print("player data saved")
+
+# function to load player data for a level
+func loadPlayer(index) -> void :
+  var player = data[0].players[index]
+  loadGame = true # swap to true to trigger the score and health to use these values from the bullet.gd and player.gd scripts
+  savePlayerObj.name = player.name;
+  savePlayerObj.score = player.score;
+  savePlayerObj.health = player.health;
+  print(savePlayerObj)
+  print("loading player data for " + player.name)
+  if (player.level == 0) :
+    print(player.name + " is on level 0. level being loaded")
+    var _scene = get_tree().change_scene("res://Level/Level.tscn")
+  elif (player.level  == 1) :
+    print(player.name + " is on level 1. level 1 is not created yet")
+  elif (player.level == 2) :
+    print(player.name + " is on level 2. level 2 is not created yet")
+  elif (player.level == 3) :
+    print(player.name + " is on level 3. level 3 is not created yet")
+  elif (player.level == 4) :
+    print(player.name + " is on level 4. level 4 is not created yet")
+  elif (player.level == 5) :
+    print(player.name + " is on level 5. level 5 is not created yet")
+  elif (player.level == 6) :
+    print(player.name + " is on level 6. level 6 is not created yet")
+  elif (player.level == 7) :
+    print(player.name + " is on level 7. level 7 is not created yet")
+  print("player game loaded successful")
 
 # function to delete player data from json file
 func deletePlayer(player) -> void :
