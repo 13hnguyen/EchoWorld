@@ -99,6 +99,7 @@ margin_left = -25.3333
 margin_top = -19.3333
 margin_right = 174.667
 margin_bottom = 80.6667
+rect_min_size = Vector2( 400, 140 )
 rect_scale = Vector2( 2, 2 )
 window_title = "Player Creation"
 dialog_text = "Enter Player Name:"
@@ -109,8 +110,8 @@ __meta__ = {
 [node name="PlayerNameCreate" type="TextEdit" parent="MenuOptions/NewGame/PlayerCreation"]
 margin_left = 8.0
 margin_top = 22.0
-margin_right = 192.0
-margin_bottom = 64.0
+margin_right = 392.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 183, 20 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -179,6 +180,7 @@ margin_left = -25.6
 margin_top = -18.9
 margin_right = 218.4
 margin_bottom = 93.1
+rect_min_size = Vector2( 400, 140 )
 rect_scale = Vector2( 2, 2 )
 window_title = "Player Deletion"
 dialog_text = "Enter Player Name to Delete Game.
@@ -190,8 +192,8 @@ __meta__ = {
 [node name="PlayerNameDelete" type="TextEdit" parent="MenuOptions/DeleteGame/PlayerDeletion"]
 margin_left = 8.0
 margin_top = 39.0
-margin_right = 236.0
-margin_bottom = 76.0
+margin_right = 392.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 183, 20 )
 __meta__ = {
 "_edit_use_anchors_": false
