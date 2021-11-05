@@ -44,7 +44,7 @@ func _process(delta):
     
     # Create the asteroid ndoe and set it's position randomly within Min and Max
     var Asteroid = AsteroidNode.instance()
-    add_child(Asteroid)
+    get_parent().add_child(Asteroid)
     
     # Randomly hit somewhere on the ground
     var GroundHitY = rand_range(GroundMin, GroundMax)
@@ -56,15 +56,13 @@ func _process(delta):
     var x = rand_range(SpawnMin.x, SpawnMax.x)
     var y = rand_range(SpawnMin.y, SpawnMax.y)
     
-    Asteroid.position = Vector2(x, y)
+    Asteroid.position = Vector2(x, y) + global_position
     
     # Now we set the shadow within the range of Min and Max
     var Shadow = Asteroid.get_child(0)
     
     # Set position of the shadow relative to the asteroid's y axis
     Shadow.position.y = GroundHitY - y
-    
-    $Sprite.position = Vector2(0,0)
     
     # Only update if we are debugging
     if DrawDebugRect :

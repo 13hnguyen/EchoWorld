@@ -1,5 +1,10 @@
 extends Node
 
+var AsteroidGenInstance = preload("res://Asteroid/AsteroidGenerator.tscn")
+var AsteroidGen
+
+var AsteroidGenPlayerDistance = 0.0
+
 func _ready() -> void :
   # We don't want the same random numbers each time.
   randomize()
@@ -15,9 +20,11 @@ func _ready() -> void :
     hp.set_text(str(3))
 
   # Start the asteroid generation
-  var AsteroidGen = preload("res://Asteroid/AsteroidGenerator.tscn")
-  var asteroidGen = AsteroidGen.instance()
-  asteroidGen.position = Vector2(1700, -100)
+  AsteroidGen = AsteroidGenInstance.instance()
+  add_child(AsteroidGen)
+  AsteroidGen.position = Vector2(1500, -100)
+  
+  AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
   # Add asteroid generator to canvas layer since it follows the player
   var canvasIndex = 0
@@ -25,8 +32,6 @@ func _ready() -> void :
     var node = get_child(n)
     if node is CanvasLayer :
       canvasIndex = n
-    
-  get_child(canvasIndex).add_child(asteroidGen)
 
   #Start the enemy generation
   var EnemyGen = preload("res://Enemy/EnemyGenerator.tscn")
@@ -48,3 +53,7 @@ func _ready() -> void :
   
   # Start the background music playing.
   $BackgndMusic.play()
+  
+  
+func _process(delta):
+  AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
