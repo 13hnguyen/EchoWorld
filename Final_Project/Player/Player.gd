@@ -34,6 +34,7 @@ func shootUp():
 
 # function for player movement: left, right, up, down, diagonal
 func _physics_process( delta : float ) -> void :
+  get_node("AnimationPlayer").play("wheels")
   var direction: Vector2
   direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
   direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
