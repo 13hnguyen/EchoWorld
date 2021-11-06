@@ -40,8 +40,6 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
   # Only shadows should interact with 
   if is_a_parent_of(body) :
     
-    # TODO: spawn some type of node that animates an explosion that can
-    #             destroy the player and reset it
     var Impact = preload("res://Asteroid/AsteroidExplosion.tscn").instance()
     get_parent().add_child(Impact)
     Impact.global_position = $Shadow.global_position

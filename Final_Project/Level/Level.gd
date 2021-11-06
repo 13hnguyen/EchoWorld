@@ -22,7 +22,7 @@ func _ready() -> void :
   # Start the asteroid generation
   AsteroidGen = AsteroidGenInstance.instance()
   add_child(AsteroidGen)
-  AsteroidGen.position = Vector2(1500, -100)
+  AsteroidGen.position = Vector2(1300, -100)
   
   AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
