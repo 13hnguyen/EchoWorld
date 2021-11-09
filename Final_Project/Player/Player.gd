@@ -34,6 +34,7 @@ func shootUp():
 
 # function for player movement: left, right, up, down, diagonal
 func _physics_process( delta : float ) -> void :
+  get_node("AnimationPlayer").play("wheels")
   var direction: Vector2
   direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
   direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -57,6 +58,7 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   if(healthPoints == 0) :
     # removed old code that called goToLevel when health = 0. the goToLevel should only be called when you enter a PORTAL. it should never be called at any other time.
     # when hp = 0, show popup die accept dialog screen and exit to main menu
+    
     print("Player health = 0. JP your code should go here for player dying")
 
 # code below is to handle loading different levels when the player reaches a portal

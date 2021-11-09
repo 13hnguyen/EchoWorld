@@ -2,12 +2,12 @@ extends Node2D
 
 # These determine the enemy spawn location
 var SpawnMin = Vector2(0, -10)
-var SpawnMax = Vector2(2000, -500)
+var SpawnMax = Vector2(2000, -400)
 
 # Spawn rates
-var SpawnRate = 1 # enemy per sec
-var SpawnTime = 1.0 / SpawnRate
-var SpawnVariance = 0.5
+var SpawnRate = 0.5 # enemy per sec
+var SpawnTime = 0.8 / SpawnRate
+var SpawnVariance = 5
 
 # Keeps track of time since last enemy was spawned
 var TimeSince = 0.0
