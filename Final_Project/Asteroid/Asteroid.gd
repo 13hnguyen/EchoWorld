@@ -41,7 +41,7 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
   if is_a_parent_of(body) :
     
     var Impact = preload("res://Asteroid/AsteroidExplosion.tscn").instance()
-    get_parent().add_child(Impact)
+    get_parent().call_deferred("add_child", Impact)
     Impact.global_position = $Shadow.global_position
     Impact.set_scale(get_scale())
     

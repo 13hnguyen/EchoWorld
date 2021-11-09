@@ -8,16 +8,7 @@
 [ext_resource path="res://Art/Explosion/explosion1.png" type="Texture" id=6]
 [ext_resource path="res://Art/Explosion/explosion4.png" type="Texture" id=7]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.98773, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 0.0920245, 0.0920245, 0.0920245, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-
-[sub_resource type="CircleShape2D" id=3]
-
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ) ],
 "loop": false,
@@ -25,30 +16,39 @@ animations = [ {
 "speed": 40.0
 } ]
 
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.98773, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.0920245, 0.0920245, 0.0920245, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="CircleShape2D" id=4]
+
 [node name="Explosion" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 2 )
 
+[node name="Explosion" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -34.189 )
+frames = SubResource( 1 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -2.62305, -5.92439 )
 texture = ExtResource( 1 )
-normal_map = SubResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.75, -7.274 )
-scale = Vector2( 5, 3 )
-shape = SubResource( 3 )
+normal_map = SubResource( 3 )
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0.75, 3 )
 scale = Vector2( 5, 1.5 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
-[node name="Explosion" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -34.189 )
-frames = SubResource( 4 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.75, -7.274 )
+scale = Vector2( 9, 3 )
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
