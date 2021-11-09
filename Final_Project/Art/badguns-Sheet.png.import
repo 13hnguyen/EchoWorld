@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/earth.PNG-8bfd8e51eb8fb74bf1ba4374cda07ae7.stex"
+path="res://.import/badguns-Sheet.png-178e976820c962088505fb8504ec8748.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bullet/earth.PNG"
-dest_files=[ "res://.import/earth.PNG-8bfd8e51eb8fb74bf1ba4374cda07ae7.stex" ]
+source_file="res://Art/badguns-Sheet.png"
+dest_files=[ "res://.import/badguns-Sheet.png-178e976820c962088505fb8504ec8748.stex" ]
 
 [params]
 

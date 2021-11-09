@@ -55,5 +55,5 @@ func _ready() -> void :
   $BackgndMusic.play()
   
   
-func _process(delta):
+func _process(_delta):
   AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
