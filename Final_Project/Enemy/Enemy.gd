@@ -5,6 +5,9 @@ var gravity  : = -10.0
 var speed    : = Vector2( 450.0, 50.0 )
 var velocity : = Vector2.ZERO
 
+# load the bullet scene
+var bullet = load("res://Bullet/EnemyBullet.tscn")
+
 func _ready() -> void:
   velocity.x = -speed.x
 
@@ -13,3 +16,16 @@ func _physics_process(delta: float) -> void:
   velocity.y += gravity * delta
   velocity.y = move_and_slide( velocity, Vector2.UP ).y
   velocity.x *= -1 if is_on_wall() else 1
+
+func _on_BulletShootTimer_timeout() -> void:
+  #print("alien shoot bullet")
+  fire()
+
+func fire () -> void:
+  var b = bullet.instance()
+  get_tree().get_root().add_child(b) # FIX THIS! the bullets are shooting from the same spot in the scene while moving instead of from enemies
+  b.transform = $BulletDownSpawnPos.global_transform
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+  print("enemy left screen. free enemy.")
+  queue_free()

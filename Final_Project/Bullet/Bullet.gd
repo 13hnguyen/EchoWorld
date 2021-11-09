@@ -35,10 +35,12 @@ func _on_Bullet_body_entered(body: Node) -> void:
     
   elif body.is_in_group("rock") :
    body.queue_free()
-   queue_free()
-   GameData.savePlayerObj.score = newScore; # update the score for the player
-   #print("Score")
-    #print(GameData.savePlayerObj.score)
+  
+  # the lines below are not supposed to be part of an elif, so please do not put it in there again. they are supposed to happen at the end of the function no matter what if,elif conditional was true
+  GameData.savePlayerObj.score = newScore; # update the score for the player
+  queue_free()
+  #print("Score")
+  #print(GameData.savePlayerObj.score)
 
 # function to free the bullet once it leaves the screen (this is to avoid hitting other objects off screen)
 func _on_VisibilityNotifier2D_screen_exited() -> void:

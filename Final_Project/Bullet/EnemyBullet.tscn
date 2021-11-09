@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Art/bullet.png" type="Texture" id=1]
-[ext_resource path="res://Bullet/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://Bullet/EnemyBullet.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 19.649
 
-[node name="Bullet" type="Area2D"]
-collision_layer = 0
-collision_mask = 12
+[node name="EnemyBullet" type="Area2D"]
+rotation = 1.5708
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,5 +24,5 @@ texture = ExtResource( 1 )
 position = Vector2( 8.89619, 0.187325 )
 scale = Vector2( 2.38593, 1.50568 )
 
-[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_EnemyBullet_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

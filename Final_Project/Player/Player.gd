@@ -10,7 +10,7 @@ func _ready() -> void:
     #print(GameData.savePlayerObj.health)
 
 # load the bullet scene
-var bullet = preload("res://Bullet/Bullet.tscn")
+var bullet = load("res://Bullet/Bullet.tscn")
 
 # looking for input to signal that the player shoots a bullet
 func _input( event : InputEvent ) -> void :
@@ -46,9 +46,9 @@ func _physics_process( delta : float ) -> void :
   var movement = speed * direction * delta
   var _velocity = move_and_collide(movement) # velocity has an underscore on purpose
 
-# function to detect whether the player has been hit by an enemy
+# function to detect whether the player has been hit
 func _on_EnemyDetector_body_entered( _body : Node ) -> void :
-  print( "Player got hit by an Enemy." )
+  print( "Player got hit." )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
