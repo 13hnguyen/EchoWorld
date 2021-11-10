@@ -1,1 +1,1 @@
-[{"players":[{"health":2,"level":0,"name":"John","score":180},{"health":3,"level":0,"name":"Steve","score":0}]}]
+[{"players":[{"health":2,"level":0,"name":"John","score":180},{"health":-1,"level":1,"name":"John Doe","score":0}]}]

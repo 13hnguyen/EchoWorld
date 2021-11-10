@@ -114,10 +114,6 @@ func loadPlayer(index) -> void :
     print(player.name + " is on level 4. level 4 is not created yet")
   elif (player.level == 5) :
     print(player.name + " is on level 5. level 5 is not created yet")
-  elif (player.level == 6) :
-    print(player.name + " is on level 6. level 6 is not created yet")
-  elif (player.level == 7) :
-    print(player.name + " is on level 7. level 7 is not created yet")
   print("player game loaded successful")
 
 # function to delete player data from json file
