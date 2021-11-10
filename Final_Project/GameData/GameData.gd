@@ -104,17 +104,27 @@ func loadPlayer(index) -> void :
   if (player.level == 0) :
     print(player.name + " is on level 0. level being loaded")
     var _scene = get_tree().change_scene("res://Level/Level.tscn")
+    print("player game loaded successful")
   elif (player.level  == 1) :
     print(player.name + " is on level 1. level 1 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level1.tscn")
+    #print("player game loaded successful")
   elif (player.level == 2) :
     print(player.name + " is on level 2. level 2 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level2.tscn")
+    #print("player game loaded successful")
   elif (player.level == 3) :
     print(player.name + " is on level 3. level 3 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level3.tscn")
+    #print("player game loaded successful")
   elif (player.level == 4) :
     print(player.name + " is on level 4. level 4 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level4.tscn")
+    #print("player game loaded successful")
   elif (player.level == 5) :
     print(player.name + " is on level 5. level 5 is not created yet")
-  print("player game loaded successful")
+    #var _scene = get_tree().change_scene("res://Level/Level5.tscn")
+    #print("player game loaded successful")
 
 # function to delete player data from json file
 func deletePlayer(player) -> void :

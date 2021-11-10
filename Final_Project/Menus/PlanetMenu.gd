@@ -17,12 +17,17 @@ func _on_Continue_pressed() -> void:
   print("loading level ", nxtlvl)
 
   if (nxtlvl  == 1) :
-    print("level 1 is not created yet") #call the change scene to get to particular level in conditionals once levels are finished
+    print("level 1 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level1.tscn")
   elif (nxtlvl == 2) :
     print("level 2 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level2.tscn")
   elif (nxtlvl == 3) :
     print("level 3 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level3.tscn")
   elif (nxtlvl == 4) :
     print("level 4 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level4.tscn")
   elif (nxtlvl == 5) :
     print("level 5 is not created yet")
+    #var _scene = get_tree().change_scene("res://Level/Level5.tscn")
