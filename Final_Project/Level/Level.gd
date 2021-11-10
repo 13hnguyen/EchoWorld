@@ -2,8 +2,10 @@ extends Node
 
 var AsteroidGenInstance = preload("res://Asteroid/AsteroidGenerator.tscn")
 var AsteroidGen
+var EnemyGen
 
 var AsteroidGenPlayerDistance = 0.0
+var EnemyGenPlayerDistance = 0.0
 
 func _ready() -> void :
   # We don't want the same random numbers each time.
@@ -26,20 +28,14 @@ func _ready() -> void :
   
   AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
-  # Add asteroid generator to canvas layer since it follows the player
-  var canvasIndex = 0
-  for n in range(1, get_child_count()) :
-    var node = get_child(n)
-    if node is CanvasLayer :
-      canvasIndex = n
-
   #Start the enemy generation
-  var EnemyGen = preload("res://Enemy/EnemyGenerator.tscn")
-  var enemyGen = EnemyGen.instance()
-  enemyGen.position = Vector2(2000, 800)
+  EnemyGen = preload("res://Enemy/EnemyGenerator.tscn").instance()
+  EnemyGen.position = Vector2(1800, 700)
   
   # Add enemybgenerator to canvas layer since it follows the player  
-  get_child(canvasIndex).add_child(enemyGen)
+  add_child(EnemyGen)
+  
+  EnemyGenPlayerDistance = EnemyGen.position.x - $Player.position.x
   
   #Start the rock generation
   #var RockGen = preload("res://Rock/RockGenerator.tscn")
@@ -57,3 +53,4 @@ func _ready() -> void :
   
 func _process(_delta):
   AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
+  EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance
