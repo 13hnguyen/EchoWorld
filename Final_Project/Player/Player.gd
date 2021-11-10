@@ -118,6 +118,7 @@ func gotoScene( which : int = -1 ) -> void :
 
 func _on_ObstacleDetector_body_entered(body):
   print( "Player got hit by a Rock." )
+  
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)

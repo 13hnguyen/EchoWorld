@@ -94,10 +94,10 @@ stream = ExtResource( 1 )
 position = Vector2( 491.725, 823.444 )
 
 [node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1014.67, 889.787 )
+position = Vector2( 1022.48, 975.644 )
 
 [node name="RigidBody2D3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1482.98, 956.131 )
+position = Vector2( 1502.49, 975.644 )
 
 [node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2474.23, 960.034 )
