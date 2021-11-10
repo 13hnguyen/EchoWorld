@@ -23,7 +23,7 @@ func _on_BulletShootTimer_timeout() -> void:
 
 func fire () -> void:
   var b = bullet.instance()
-  get_tree().get_root().add_child(b) # FIX THIS! the bullets are shooting from the same spot in the scene while moving instead of from enemies
+  get_tree().get_root().add_child(b)
   b.transform = $BulletDownSpawnPos.global_transform
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
