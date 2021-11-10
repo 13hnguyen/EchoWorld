@@ -9,8 +9,13 @@ func _ready() -> void:
     #print("Health:")
     #print(GameData.savePlayerObj.health)
 
+
+##########################################################################################################
+# CHARACTER MOVEMENT AND SHOOTING BULLETS
+##########################################################################################################
+
 # load the bullet scene
-var bullet = preload("res://Bullet/Bullet.tscn")
+var bullet = load("res://Bullet/Bullet.tscn")
 
 # looking for input to signal that the player shoots a bullet
 func _input( event : InputEvent ) -> void :
@@ -46,20 +51,44 @@ func _physics_process( delta : float ) -> void :
   var movement = speed * direction * delta
   var _velocity = move_and_collide(movement) # velocity has an underscore on purpose
 
-# function to detect whether the player has been hit by an enemy
+
+
+
+##########################################################################################################
+# CHARACTER HEALTH SYSYTEM
+##########################################################################################################
+
+# function to detect whether the player has been hit by another 2D Kinematic Body (ie. asteroid)
 func _on_EnemyDetector_body_entered( _body : Node ) -> void :
-  print( "Player got hit by an Enemy." )
+  print( "Player got hit by 2D body." )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
   GameData.savePlayerObj.health = healthPoints; # update the health points for the player
+  checkHealth()
   #print("Health:")
   #print(GameData.savePlayerObj.health)
+
+# function to detect whether the player has been hit by another Area 2D (ie. alien bullet)
+func _on_EnemyDetector_area_entered( _area: Area2D) -> void:
+  print ( "Player got hit by 2D area." )
+  healthPoints = healthPoints - 1
+  var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
+  HealthLabel.text = str(healthPoints)
+  GameData.savePlayerObj.health = healthPoints; # update the health points for the player
+  checkHealth()
+
+# function to determine if the health of the player == 0 (meaning the player died)
+func checkHealth () -> void :
   if(healthPoints == 0) :
-    # removed old code that called goToLevel when health = 0. the goToLevel should only be called when you enter a PORTAL. it should never be called at any other time.
-    # when hp = 0, show popup die accept dialog screen and exit to main menu
-    
     print("Player health = 0. JP your code should go here for player dying")
+
+
+
+
+##########################################################################################################
+# CHARACTER ENTER PORTAL TO CHANGE LEVELS
+##########################################################################################################
 
 # code below is to handle loading different levels when the player reaches a portal
 const level = [

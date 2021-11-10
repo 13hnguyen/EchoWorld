@@ -7,7 +7,7 @@ var SpawnMax = Vector2(2000, -400)
 # Spawn rates
 var SpawnRate = 0.5 # enemy per sec
 var SpawnTime = 0.8 / SpawnRate
-var SpawnVariance = 5
+var SpawnVariance = 0.5
 
 # Keeps track of time since last enemy was spawned
 var TimeSince = 0.0
@@ -36,13 +36,13 @@ func _process(delta):
     
     # Create the enemy node and set it's position randomly within Min and Max
     var Enemy = EnemyNode.instance()
-    add_child(Enemy)
+    get_parent().add_child(Enemy)
     
     # Randomly pick a location in the relative rect
     var x = rand_range(SpawnMin.x, SpawnMax.x)
     var y = rand_range(SpawnMin.y, SpawnMax.y)
     
-    Enemy.position = Vector2(x, y)
+    Enemy.position = Vector2(x, y) + global_position
     
     $Sprite.position = Vector2(0,0)
     

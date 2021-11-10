@@ -25,8 +25,7 @@ tracks/0/keys = {
 "enemy",
 ]]
 position = Vector2( -2, 16 )
-collision_layer = 8
-collision_mask = 2
+collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -46,3 +45,16 @@ polygon = PoolVector2Array( -42.5786, 22.4003, -35.5076, 37.603, -2.98065, 43.96
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Flashlights = SubResource( 1 )
+
+[node name="BulletDownSpawnPos" type="Position2D" parent="."]
+position = Vector2( -80, 0 )
+rotation = 2.0944
+
+[node name="BulletShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="timeout" from="BulletShootTimer" to="." method="_on_BulletShootTimer_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
