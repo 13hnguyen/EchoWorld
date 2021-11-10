@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-chase.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
 [ext_resource path="res://Level/Level.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Rock/Rock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/universe.png" type="Texture" id=7]
 [ext_resource path="res://Art/ground.png" type="Texture" id=8]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
@@ -88,6 +89,24 @@ position = Vector2( 3852.38, 998.53 )
 
 [node name="BackgndMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 491.725, 823.444 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1014.67, 889.787 )
+
+[node name="RigidBody2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1482.98, 956.131 )
+
+[node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2474.23, 960.034 )
+
+[node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2946.44, 819.541 )
+
+[node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2044.95, 842.957 )
 
 [node name="On Screen Labels" type="CanvasLayer" parent="."]
 

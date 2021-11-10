@@ -85,3 +85,18 @@ func gotoScene( which : int = -1 ) -> void :
   #position = level[which][ 'StartPosition' ]
   #$Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
   #$Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
+
+
+func _on_ObstacleDetector_body_entered(body):
+  print( "Player got hit by a Rock." )
+  healthPoints = healthPoints - 1
+  var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
+  HealthLabel.text = str(healthPoints)
+  GameData.savePlayerObj.health = healthPoints; # update the health points for the player
+  #print("Health:")
+  #print(GameData.savePlayerObj.health)
+  if(healthPoints == 0) :
+    # removed old code that called goToLevel when health = 0. the goToLevel should only be called when you enter a PORTAL. it should never be called at any other time.
+    # when hp = 0, show popup die accept dialog screen and exit to main menu
+    
+    print("Player health = 0. JP your code should go here for player dying")
