@@ -116,7 +116,7 @@ func gotoScene( which : int = -1 ) -> void :
   #$Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
 
 
-func _on_ObstacleDetector_body_entered(body):
+func _on_ObstacleDetector_body_entered(_body):
   print( "Player got hit by a Rock." )
   
   healthPoints = healthPoints - 1
