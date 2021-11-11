@@ -80,8 +80,9 @@ func _on_EnemyDetector_area_entered( _area: Area2D) -> void:
 
 # function to determine if the health of the player == 0 (meaning the player died)
 func checkHealth () -> void :
-  if(healthPoints == 0) :
+  if(healthPoints < 1) :
     print("Player health = 0. JP your code should go here for player dying")
+    var _scene = get_tree().change_scene("res://Menus/GameOverMenu.tscn")
 
 
 

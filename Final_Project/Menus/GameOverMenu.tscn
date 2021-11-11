@@ -3,7 +3,6 @@
 [ext_resource path="res://Art/GameOverBackground.png" type="Texture" id=1]
 [ext_resource path="res://Menus/GameOverMenu.gd" type="Script" id=2]
 
-
 [node name="GameOverMenu" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -33,9 +32,9 @@ __meta__ = {
 
 [node name="BackToMainMenu" type="Button" parent="."]
 margin_left = 589.901
-margin_top = 590.665
+margin_top = 590.252
 margin_right = 672.901
-margin_bottom = 610.665
+margin_bottom = 610.252
 rect_scale = Vector2( 5, 5 )
 text = "Main Menu"
 __meta__ = {
