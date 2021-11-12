@@ -8,7 +8,6 @@
 [ext_resource path="res://Art/Explosion/explosion1.png" type="Texture" id=6]
 [ext_resource path="res://Art/Explosion/explosion4.png" type="Texture" id=7]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ) ],
@@ -26,7 +25,9 @@ gradient = SubResource( 2 )
 
 [sub_resource type="CircleShape2D" id=4]
 
-[node name="Explosion" type="KinematicBody2D"]
+[node name="Explosion" type="KinematicBody2D" groups=[
+"explosion",
+]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 2 )

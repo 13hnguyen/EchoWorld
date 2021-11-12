@@ -70,7 +70,11 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   #print(GameData.savePlayerObj.health)
 
 # function to detect whether the player has been hit by another Area 2D (ie. alien bullet)
-func _on_EnemyDetector_area_entered( _area: Area2D) -> void:
+func _on_EnemyDetector_area_entered( area: Area2D) -> void:
+  # make sure asteroid explosions only count once
+  if area.get_parent().is_in_group("explosion") :
+    return
+  
   print ( "Player got hit by 2D area." )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
