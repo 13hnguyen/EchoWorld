@@ -29,7 +29,7 @@ func _on_LoadGame_pressed() -> void:
   for n in GameData.data[0].players:
     #print("n = ",n)
     #print(n.name)
-    $MenuOptions/LoadGame/LoadPlayer/PlayerList.add_item("Player: " + n.name,load("res://Art/rover.png"),true)
+    $MenuOptions/LoadGame/LoadPlayer/PlayerList.add_item("Player: " + n.name,load("res://Art/Players/rover.png"),true)
 
 func _on_PlayerList_item_activated(index: int) -> void:
   #print(index)
