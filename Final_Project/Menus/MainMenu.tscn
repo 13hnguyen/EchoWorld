@@ -282,5 +282,4 @@ __meta__ = {
 [connection signal="confirmed" from="MenuOptions/DeleteGame/PlayerDeletion" to="." method="_on_PlayerDeletion_confirmed"]
 [connection signal="pressed" from="MenuOptions/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="MenuOptions/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="mouse_exited" from="MenuOptions/VolumeSlider" to="." method="release_focus"]
 [connection signal="value_changed" from="MenuOptions/VolumeSlider" to="MenuOptions/VolumeSlider" method="_on_value_changed"]
