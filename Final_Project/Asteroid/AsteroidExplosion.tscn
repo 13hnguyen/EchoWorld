@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Art/Asteroid Impact.png" type="Texture" id=1]
+[ext_resource path="res://Art/Asteroids/Asteroid Impact.png" type="Texture" id=1]
 [ext_resource path="res://Asteroid/AsteroidExplosion.gd" type="Script" id=2]
 [ext_resource path="res://Art/Explosion/explosion5.png" type="Texture" id=3]
 [ext_resource path="res://Art/Explosion/explosion2.png" type="Texture" id=4]

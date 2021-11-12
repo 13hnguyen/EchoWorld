@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var speed    : = 300.0
 var healthPoints : = 3
+var movement : Vector2
 
 func _ready() -> void:
   if GameData.loadGame == false:
@@ -48,7 +49,7 @@ func _physics_process( delta : float ) -> void :
   if abs(direction.x) == 1 and abs(direction.y) == 1:
     direction = direction.normalized()
 
-  var movement = speed * direction * delta
+  movement = speed * direction * delta
   var _velocity = move_and_collide(movement) # velocity has an underscore on purpose
 
 
@@ -84,8 +85,9 @@ func _on_EnemyDetector_area_entered( area: Area2D) -> void:
 
 # function to determine if the health of the player == 0 (meaning the player died)
 func checkHealth () -> void :
-  if(healthPoints == 0) :
+  if(healthPoints < 1) :
     print("Player health = 0. JP your code should go here for player dying")
+    var _scene = get_tree().change_scene("res://Menus/GameOverMenu.tscn")
 
 
 
@@ -120,17 +122,12 @@ func gotoScene( which : int = -1 ) -> void :
   #$Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
 
 
-func _on_ObstacleDetector_body_entered(body):
+func _on_ObstacleDetector_body_entered(_body):
   print( "Player got hit by a Rock." )
+  
   
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
   GameData.savePlayerObj.health = healthPoints; # update the health points for the player
-  #print("Health:")
-  #print(GameData.savePlayerObj.health)
-  if(healthPoints == 0) :
-    # removed old code that called goToLevel when health = 0. the goToLevel should only be called when you enter a PORTAL. it should never be called at any other time.
-    # when hp = 0, show popup die accept dialog screen and exit to main menu
-    
-    print("Player health = 0. JP your code should go here for player dying")
+  checkHealth()

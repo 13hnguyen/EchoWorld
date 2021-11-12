@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Menus/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Menus/VolumeSlider.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -27,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Game Paused Label" type="Label" parent="."]
 margin_left = 560.018
 margin_top = 310.227
 margin_right = 653.018
@@ -73,5 +74,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VolumeSlider" type="HSlider" parent="."]
+margin_left = 879.501
+margin_top = 594.693
+margin_right = 1200.51
+margin_bottom = 702.693
+max_value = 1.0
+step = 0.05
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeLabel" type="RichTextLabel" parent="."]
+margin_left = 703.615
+margin_top = 628.519
+margin_right = 777.615
+margin_bottom = 646.519
+rect_scale = Vector2( 3, 3 )
+text = "Volume: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="value_changed" from="VolumeSlider" to="VolumeSlider" method="_on_value_changed"]
