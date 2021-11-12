@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Art/black_space_stars.PNG" type="Texture" id=1]
+[ext_resource path="res://Art/Backgrounds/black_space_stars.PNG" type="Texture" id=1]
 [ext_resource path="res://Art/Planets/planet03.png" type="Texture" id=2]
 [ext_resource path="res://Menus/PlanetMenu.gd" type="Script" id=3]
 [ext_resource path="res://Art/Planets/planet02.png" type="Texture" id=4]
