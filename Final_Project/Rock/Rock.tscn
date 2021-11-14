@@ -3,16 +3,17 @@
 [ext_resource path="res://Art/Obstacles/rock.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 51.9639, 46.7165 )
+extents = Vector2( 49.1859, 44.3354 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3, -4.25 )
-scale = Vector2( 3.1875, 3.20313 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
