@@ -1,7 +1,11 @@
 1. Portal.png, Source: https://freepngimg.com/Artistic/portal
 2. Laser Bullets, Source: https://wenrexa.itch.io/laser-pack-bullets
-3. Dragon Slayer by Makai-Symphony, Source: https://soundcloud.com/makai-symphony
-4. Chase by Alexander Nakarada, https://www.serpentsoundstudios.com
-5. Main Theme (Overture)-The Grand Score by Alexander Nakarada, https://creativecommons.org/licenses/by/4.0/
-6. Dragon Castle by Makai Symphony, https://soundcloud.com/makai-symphony
-7. Batalha by Joâo Vitor Lisboa, https://OpenGameArt.org
+3. Asteroid.png, Source: https://opengameart.org/content/brown-asteroid
+4. Dragon Slayer by Makai-Symphony, Source: https://soundcloud.com/makai-symphony
+5. Chase by Alexander Nakarada, https://www.serpentsoundstudios.com
+6. Main Theme (Overture)-The Grand Score by Alexander Nakarada, https://creativecommons.org/licenses/by/4.0/
+7. Dragon Castle by Makai Symphony, https://soundcloud.com/makai-symphony
+8. Batalha by Joâo Vitor Lisboa, https://OpenGameArt.org
+
+
+
