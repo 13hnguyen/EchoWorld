@@ -5,7 +5,7 @@ var SpawnMin = Vector2(0, -10)
 var SpawnMax = Vector2(2000, -400)
 
 # Spawn rates
-var SpawnRate = 0.5 # enemy per sec
+var SpawnRate = 0.25 # enemy per sec
 var SpawnTime = 0.8 / SpawnRate
 var SpawnVariance = 0.5
 
