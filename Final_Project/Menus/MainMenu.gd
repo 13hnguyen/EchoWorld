@@ -1,8 +1,12 @@
 extends Node2D
 
-# function to start the background music playing.
+var creditsfile = 'res://credits.txt'
+var creditstext = ""
+
+# function to start the background music playing and load in the credits text file
 func _ready() -> void :
   $MenuMusic.play()
+  load_file(creditsfile)
 
 # function to popup player creation from main menu when clicked "new game"
 func _on_NewGame_pressed() -> void:
@@ -31,6 +35,7 @@ func _on_LoadGame_pressed() -> void:
     #print(n.name)
     $MenuOptions/LoadGame/LoadPlayer/PlayerList.add_item("Player: " + n.name,load("res://Art/Players/rover.png"),true)
 
+# function called once a player is selected to load from player list
 func _on_PlayerList_item_activated(index: int) -> void:
   #print(index)
   get_node("MenuOptions/LoadGame/LoadPlayer").hide()
@@ -42,6 +47,7 @@ func _on_DeleteGame_pressed() -> void:
   print("delete game menu")
   get_node("MenuOptions/DeleteGame/PlayerDeletion").popup()
 
+# function called once a player name is entered for deletion
 func _on_PlayerDeletion_confirmed() -> void:
   var deleteName = find_node("PlayerNameDelete").text.strip_edges()
   if deleteName.empty():
@@ -55,6 +61,24 @@ func _on_PlayerDeletion_confirmed() -> void:
 func _on_Controls_pressed() -> void:
   print("game controls menu")
   get_node("MenuOptions/Controls/PlayerControls").popup()
+
+# function to show game credits from main menu when clicked "credits"
+func _on_Credits_pressed() -> void:
+  print("credits menu")
+  get_node("MenuOptions/Credits/CreditDialog").popup()
+  var credits = get_node("MenuOptions/Credits/CreditDialog")
+  credits.set_text(creditstext)
+
+# function to read in the credits text file
+func load_file(file):
+    var f = File.new()
+    f.open(file, File.READ)
+    while not f.eof_reached(): # iterate through all lines until the end of file is reached
+        creditstext += f.get_line() + "\n"
+    #print("credits text file contents:")
+    #print(creditstext)
+    f.close()
+    return
 
 # function to quit the game from main menu when clicked "quit"
 func _on_Quit_pressed() -> void:

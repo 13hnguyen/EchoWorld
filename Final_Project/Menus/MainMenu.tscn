@@ -64,10 +64,10 @@ texture = ExtResource( 3 )
 speed = 0.05
 
 [node name="Logo" type="TextureRect" parent="."]
-margin_left = 245.847
-margin_top = 139.709
-margin_right = 1579.84
-margin_bottom = 322.709
+margin_left = 229.318
+margin_top = 57.0827
+margin_right = 1563.31
+margin_bottom = 240.083
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,10 +76,10 @@ __meta__ = {
 [node name="MenuOptions" type="CanvasLayer" parent="."]
 
 [node name="NewGame" type="Button" parent="MenuOptions"]
-margin_left = 671.106
-margin_top = 421.459
-margin_right = 810.106
-margin_bottom = 444.459
+margin_left = 673.484
+margin_top = 314.43
+margin_right = 812.484
+margin_bottom = 337.43
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
@@ -96,10 +96,10 @@ anchor_left = 0.4
 anchor_top = 0.3
 anchor_right = 0.4
 anchor_bottom = 0.3
-margin_left = -11.6322
-margin_top = -57.2188
-margin_right = 188.368
-margin_bottom = 42.7812
+margin_left = -9.63446
+margin_top = -120.647
+margin_right = 190.366
+margin_bottom = -20.6471
 rect_min_size = Vector2( 200, 100 )
 rect_scale = Vector2( 2, 2 )
 window_title = "Player Creation"
@@ -119,10 +119,10 @@ __meta__ = {
 }
 
 [node name="LoadGame" type="Button" parent="MenuOptions"]
-margin_left = 669.913
-margin_top = 513.082
-margin_right = 808.913
-margin_bottom = 536.082
+margin_left = 672.291
+margin_top = 406.053
+margin_right = 811.291
+margin_bottom = 429.053
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 7 )
@@ -157,10 +157,10 @@ __meta__ = {
 }
 
 [node name="DeleteGame" type="Button" parent="MenuOptions"]
-margin_left = 673.172
-margin_top = 606.831
-margin_right = 812.172
-margin_bottom = 629.831
+margin_left = 675.55
+margin_top = 499.802
+margin_right = 814.55
+margin_bottom = 522.802
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
@@ -201,10 +201,10 @@ __meta__ = {
 }
 
 [node name="Controls" type="Button" parent="MenuOptions"]
-margin_left = 667.295
-margin_top = 697.047
-margin_right = 806.295
-margin_bottom = 720.047
+margin_left = 669.673
+margin_top = 590.018
+margin_right = 808.673
+margin_bottom = 613.018
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
@@ -235,11 +235,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Credits" type="Button" parent="MenuOptions"]
+margin_left = 671.088
+margin_top = 673.457
+margin_right = 810.088
+margin_bottom = 696.457
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.827451, 0.933333, 0.0901961, 1 )
+custom_colors/font_color_pressed = Color( 0.827451, 0.933333, 0.0901961, 1 )
+text = "CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditDialog" type="AcceptDialog" parent="MenuOptions/Credits"]
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.4
+anchor_bottom = 0.3
+margin_left = -216.319
+margin_top = -43.1271
+margin_right = 239.681
+margin_bottom = 79.8729
+rect_scale = Vector2( 2, 2 )
+window_title = "Credits"
+resizable = true
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Quit" type="Button" parent="MenuOptions"]
-margin_left = 668.852
-margin_top = 779.521
-margin_right = 807.852
-margin_bottom = 802.521
+margin_left = 667.935
+margin_top = 754.386
+margin_right = 806.935
+margin_bottom = 777.386
 rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 9 )
@@ -281,5 +315,6 @@ __meta__ = {
 [connection signal="pressed" from="MenuOptions/DeleteGame" to="." method="_on_DeleteGame_pressed"]
 [connection signal="confirmed" from="MenuOptions/DeleteGame/PlayerDeletion" to="." method="_on_PlayerDeletion_confirmed"]
 [connection signal="pressed" from="MenuOptions/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="MenuOptions/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="MenuOptions/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="value_changed" from="MenuOptions/VolumeSlider" to="MenuOptions/VolumeSlider" method="_on_value_changed"]

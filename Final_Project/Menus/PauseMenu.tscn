@@ -76,9 +76,9 @@ __meta__ = {
 
 [node name="VolumeSlider" type="HSlider" parent="."]
 margin_left = 879.501
-margin_top = 594.693
+margin_top = 626.157
 margin_right = 1200.51
-margin_bottom = 702.693
+margin_bottom = 734.157
 max_value = 1.0
 step = 0.05
 script = ExtResource( 2 )
@@ -88,9 +88,9 @@ __meta__ = {
 
 [node name="VolumeLabel" type="RichTextLabel" parent="."]
 margin_left = 703.615
-margin_top = 628.519
+margin_top = 659.984
 margin_right = 777.615
-margin_bottom = 646.519
+margin_bottom = 677.984
 rect_scale = Vector2( 3, 3 )
 text = "Volume: "
 __meta__ = {
