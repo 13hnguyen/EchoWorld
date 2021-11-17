@@ -1,0 +1,156 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Music/alexander-nakarada-chase.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
+[ext_resource path="res://Level/Level.gd" type="Script" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Rock/Rock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Art/Backgrounds/L4Universe.png" type="Texture" id=7]
+[ext_resource path="res://Art/Backgrounds/ground.png" type="Texture" id=8]
+[ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
+[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "Tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 80 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Level" type="Node"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 80.0611, 199.576 ],
+"_edit_vertical_guides_": [ 248.619, 359.952 ]
+}
+
+[node name="Universe" parent="." instance=ExtResource( 5 )]
+margin_left = -64.0
+margin_right = 3979.0
+margin_bottom = 1536.0
+rect_scale = Vector2( 1, 0.7 )
+texture = ExtResource( 7 )
+speed = 0.005
+
+[node name="Stars" parent="." instance=ExtResource( 5 )]
+margin_right = 3909.0
+margin_bottom = 1031.0
+texture = ExtResource( 10 )
+speed = 0.015
+
+[node name="Ground" parent="." instance=ExtResource( 5 )]
+margin_left = -5.24512
+margin_top = -48.0
+margin_right = 3909.75
+margin_bottom = 1024.0
+texture = ExtResource( 8 )
+speed = 0.0
+
+[node name="Border Tilemap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -327681, 0, 0, -393155, 0, 0, -262145, 0, 0, -327619, 0, 0, -196609, 0, 0, -262083, 0, 0, -131073, 0, 0, -196547, 0, 0, -65537, 0, 0, -131011, 0, 0, -1, 0, 0, -65475, 0, 0, 65535, 0, 0, 61, 0, 0, 131071, 0, 0, 65597, 0, 0, 196607, 0, 0, 131133, 0, 0, 262143, 0, 0, 196669, 0, 0, 327679, 0, 0, 262205, 0, 0, 393215, 0, 0, 327741, 0, 0, 458751, 0, 0, 393277, 0, 0, 524287, 0, 0, 458813, 0, 0, 589823, 0, 0, 524349, 0, 0, 655359, 0, 0, 589885, 0, 0, 720895, 0, 0, 655421, 0, 0, 786431, 0, 0, 720957, 0, 0, 851967, 0, 0, 786493, 0, 0, 917503, 0, 0, 852029, 0, 0, 983039, 0, 0, 917565, 0, 0, 1048575, 0, 0, 983101, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048615, 0, 0, 1048616, 0, 0, 1048617, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048629, 0, 0, 1048630, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0 )
+
+[node name="Vertical Limit Tilemap" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource( 2 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -327681, 0, 0, -393155, 0, 0, -262145, 0, 0, -327619, 0, 0, -196609, 0, 0, -262083, 0, 0, -131073, 0, 0, -196547, 0, 0, -65537, 0, 0, -131011, 0, 0, -1, 0, 0, -65475, 0, 0, 65535, 0, 0, 61, 0, 0, 131071, 0, 0, 65597, 0, 0, 196607, 0, 0, 131133, 0, 0, 262143, 0, 0, 196669, 0, 0, 327679, 0, 0, 262205, 0, 0, 393215, 0, 0, 327741, 0, 0, 458751, 0, 0, 393277, 0, 0, 524287, 0, 0, 458813, 0, 0, 589823, 0, 0, 524349, 0, 0, 655359, 0, 0, 589885, 0, 0, 720895, 0, 0, 655421, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 720932, 0, 0, 720933, 0, 0, 720934, 0, 0, 720935, 0, 0, 720936, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720946, 0, 0, 720947, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 851967, 0, 0, 786493, 0, 0, 917503, 0, 0, 852029, 0, 0, 983039, 0, 0, 917565, 0, 0, 1048575, 0, 0, 983101, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048615, 0, 0, 1048616, 0, 0, 1048617, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048629, 0, 0, 1048630, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 92, 954 )
+
+[node name="Portal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3819.58, 905.191 )
+
+[node name="BackgndMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 467.671, 786.917 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1022.48, 975.644 )
+
+[node name="RigidBody2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1502.49, 975.644 )
+
+[node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2474.23, 960.034 )
+
+[node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2974.06, 794.596 )
+
+[node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2038.71, 807.321 )
+
+[node name="On Screen Labels" type="CanvasLayer" parent="."]
+
+[node name="HPandScoreTitles" type="RichTextLabel" parent="On Screen Labels"]
+margin_left = 136.537
+margin_top = 32.0377
+margin_right = 200.538
+margin_bottom = 80.0377
+rect_scale = Vector2( 4, 4 )
+custom_colors/default_color = Color( 0.262745, 0.956863, 0.184314, 1 )
+text = "Score:
+
+HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerScoreNum" type="RichTextLabel" parent="On Screen Labels"]
+anchor_top = 0.001
+anchor_bottom = 0.001
+margin_left = 331.681
+margin_top = 32.385
+margin_right = 374.681
+margin_bottom = 51.385
+rect_scale = Vector2( 4, 4 )
+custom_colors/default_color = Color( 0.262745, 0.956863, 0.184314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHP" type="RichTextLabel" parent="On Screen Labels"]
+margin_left = 331.325
+margin_top = 151.451
+margin_right = 353.325
+margin_bottom = 166.451
+rect_scale = Vector2( 4, 4 )
+custom_colors/default_color = Color( 0.262745, 0.956863, 0.184314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1.5874, 1.58733 )

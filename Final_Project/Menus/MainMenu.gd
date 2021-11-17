@@ -29,7 +29,7 @@ func _on_PlayerCreation_confirmed() -> void:
     playerName = "John Doe"
   print("player name entered from new game: " + playerName)
   GameData.saveNewPlayer(playerName)
-  var _scene = get_tree().change_scene("res://Level/Level.tscn")
+  var _scene = get_tree().change_scene("res://Level/Level0.tscn")
   print("player created. starting level")
   
 ###############################################################################################################

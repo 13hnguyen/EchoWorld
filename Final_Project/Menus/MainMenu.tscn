@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Music/makai-symphony-dragon-slayer.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/game_logo.png" type="Texture" id=2]
-[ext_resource path="res://Art/Backgrounds/universe.png" type="Texture" id=3]
+[ext_resource path="res://Art/Backgrounds/L0Universe.png" type="Texture" id=3]
 [ext_resource path="res://Menus/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menus/VolumeSlider.gd" type="Script" id=6]
