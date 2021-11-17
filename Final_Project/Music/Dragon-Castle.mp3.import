@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dragon-Castle.mp3-b39b9680cdd372f170b5169362b3d9bd.mp3str"
+
+[deps]
+
+source_file="res://Music/Dragon-Castle.mp3"
+dest_files=[ "res://.import/Dragon-Castle.mp3-b39b9680cdd372f170b5169362b3d9bd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

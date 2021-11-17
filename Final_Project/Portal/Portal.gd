@@ -1,18 +1,13 @@
 extends Area2D
 
-# Which level am I the portal for?
-export var whichLevel : = 0
-
-func _ready() -> void:
-  GameData.savePlayerObj.level = whichLevel; # set the initial level for the player
-
-# The only body that could possibly enter this area is the
-#   Player (why is that so?).  All we have to do is tell the
-#   Player to go to the next level.
+# function to tell the player to go to the next level
 func _on_Portal_body_entered( body : PhysicsBody2D ) -> void :
-  print( "Player entered the Portal for level %d." % [ whichLevel ] )
-
-  # When the portal on a level is entered by the player, we tell
-  #   the player to go to the next level, which is our level
-  #   number plus 1.
-  body.gotoScene( whichLevel + 1 )
+  var lvl = GameData.savePlayerObj.level
+  if (lvl != 0) : # if player was on any other level (1 - 5)
+    print( "Player entered the Portal for level %d." % [ GameData.savePlayerObj.level ] )
+    if body.is_in_group("player") :
+      body.gotoScene( lvl + 1 )
+  else : # if player was on the base level 0
+    print( "Player entered the Portal for level 0.")
+    if body.is_in_group("player") :
+      body.gotoScene( 1 )

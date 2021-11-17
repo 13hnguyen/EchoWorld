@@ -36,11 +36,17 @@ func _ready() -> void :
   print("data from json:")
   print(data)
 
+
+
+
+###############################################################################################################
 # function to save the new player to the json file
+
 func saveNewPlayer(player) -> void :
   print("new player name received: " + player)
   loadGame = false;
   savePlayerObj.name = player; # update the current player name to be seen outside the scope of this function
+  savePlayerObj.level = 0; # default new players to level 0 (this is important for re-trying after death screen since the level only updates when the player hits a portal)
 
   # create a new player object in json format
   newPlayerObj.name = player;
@@ -59,8 +65,15 @@ func saveNewPlayer(player) -> void :
   file.open(filename_path, File.WRITE)
   file.store_line(to_json(data))
   file.close()
+  
+###############################################################################################################
 
+
+
+
+###############################################################################################################
 # function to save new player data for an existing player in the json file
+
 func savePlayerData() -> void :
   print("saving player data...")
   #print(savePlayerObj.name)
@@ -91,42 +104,51 @@ func savePlayerData() -> void :
   file.store_line(to_json(data))
   file.close()
   print("player data saved")
+  
+###############################################################################################################
 
+
+
+
+###############################################################################################################
 # function to load player data for a level
+
 func loadPlayer(index) -> void :
   var player = data[0].players[index]
   loadGame = true # swap to true to trigger the score and health to use these values from the bullet.gd and player.gd scripts
-  savePlayerObj.name = player.name;
-  savePlayerObj.score = player.score;
-  savePlayerObj.health = player.health;
+  savePlayerObj.name = player.name
+  savePlayerObj.score = player.score
+  savePlayerObj.health = player.health
+  savePlayerObj.level = player.level
   print(savePlayerObj)
   print("loading player data for " + player.name)
   if (player.level == 0) :
     print(player.name + " is on level 0. level being loaded")
     var _scene = get_tree().change_scene("res://Level/Level.tscn")
-    print("player game loaded successful")
   elif (player.level  == 1) :
-    print(player.name + " is on level 1. level 1 is not created yet")
-    #var _scene = get_tree().change_scene("res://Level/Level1.tscn")
-    #print("player game loaded successful")
+    print(player.name + " is on level 1. level 1 being loaded")
+    var _scene = get_tree().change_scene("res://Level/Level1.tscn")
   elif (player.level == 2) :
     print(player.name + " is on level 2. level 2 is not created yet")
     #var _scene = get_tree().change_scene("res://Level/Level2.tscn")
-    #print("player game loaded successful")
   elif (player.level == 3) :
     print(player.name + " is on level 3. level 3 is not created yet")
     #var _scene = get_tree().change_scene("res://Level/Level3.tscn")
-    #print("player game loaded successful")
   elif (player.level == 4) :
     print(player.name + " is on level 4. level 4 is not created yet")
     #var _scene = get_tree().change_scene("res://Level/Level4.tscn")
-    #print("player game loaded successful")
   elif (player.level == 5) :
     print(player.name + " is on level 5. level 5 is not created yet")
     #var _scene = get_tree().change_scene("res://Level/Level5.tscn")
-    #print("player game loaded successful")
 
+###############################################################################################################
+
+
+
+
+###############################################################################################################
 # function to delete player data from json file
+
 func deletePlayer(player) -> void :
   print("received player name to delete: " + player)
 
@@ -141,3 +163,5 @@ func deletePlayer(player) -> void :
   file.store_line(to_json(data))
   file.close()
   print("player deletion successful")
+
+###############################################################################################################

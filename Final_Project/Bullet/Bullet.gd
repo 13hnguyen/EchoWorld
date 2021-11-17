@@ -6,7 +6,11 @@ var speed = 750
 func _physics_process(delta):
     position += transform.x * speed * delta
 
+
+
+###############################################################################################################
 # function for determining if the bullet hit an enemy, asteroid, or rock, adding score (if necessary) and freeing
+
 func _on_Bullet_body_entered(body: Node) -> void:
   var ScoreLabel = get_parent().get_parent().get_node("Level/On Screen Labels/PlayerScoreNum")
   var newScore = int(float(ScoreLabel.text))
@@ -42,6 +46,12 @@ func _on_Bullet_body_entered(body: Node) -> void:
   #print("Score")
   #print(GameData.savePlayerObj.score)
 
+###############################################################################################################
+
+
+
+###############################################################################################################
 # function to free the bullet once it leaves the screen (this is to avoid hitting other objects off screen)
+
 func _on_VisibilityNotifier2D_screen_exited() -> void:
   queue_free()

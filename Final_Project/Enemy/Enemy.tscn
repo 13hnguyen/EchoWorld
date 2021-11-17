@@ -39,8 +39,8 @@ vframes = 2
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -1.94048, -128.709 )
-scale = Vector2( 2.36208, 3.35032 )
+position = Vector2( -1.64575, -100.635 )
+scale = Vector2( 1.63677, 2.39046 )
 polygon = PoolVector2Array( -42.5786, 22.4003, -35.5076, 37.603, -2.98065, 43.967, 35.9102, 39.0173, 44.0419, 23.1074, 29.5463, 14.6221, -1.21289, 11.0865, -29.1436, 16.0363 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

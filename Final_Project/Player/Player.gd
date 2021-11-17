@@ -59,9 +59,9 @@ func _physics_process( delta : float ) -> void :
 # CHARACTER HEALTH SYSYTEM
 ##########################################################################################################
 
-# function to detect whether the player has been hit by another 2D Kinematic Body (ie. asteroid)
-func _on_EnemyDetector_body_entered( _body : Node ) -> void :
-  print( "Player got hit by 2D body." )
+# function to detect whether the player has been hit by another 2D Body (ie. asteroid or rock)
+func _on_EnemyDetector_body_entered( body : Node ) -> void :
+  print( "Player got hit by 2D body. Type: ", body )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
@@ -70,13 +70,15 @@ func _on_EnemyDetector_body_entered( _body : Node ) -> void :
   #print("Health:")
   #print(GameData.savePlayerObj.health)
 
-# function to detect whether the player has been hit by another Area 2D (ie. alien bullet)
+# function to detect whether the player has been hit by another Area 2D (ie. enemy bullet, portal, explosion)
 func _on_EnemyDetector_area_entered( area: Area2D) -> void:
   # make sure asteroid explosions only count once
   if area.get_parent().is_in_group("explosion") :
     return
+  if area.is_in_group("portal") :
+    return
   
-  print ( "Player got hit by 2D area." )
+  print ( "Player got hit by 2D area. Type: ", area )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
@@ -86,7 +88,6 @@ func _on_EnemyDetector_area_entered( area: Area2D) -> void:
 # function to determine if the health of the player == 0 (meaning the player died)
 func checkHealth () -> void :
   if(healthPoints < 1) :
-    print("Player health = 0. JP your code should go here for player dying")
     var _scene = get_tree().change_scene("res://Menus/GameOverMenu.tscn")
 
 
@@ -96,38 +97,10 @@ func checkHealth () -> void :
 # CHARACTER ENTER PORTAL TO CHANGE LEVELS
 ##########################################################################################################
 
-# code below is to handle loading different levels when the player reaches a portal
-const level = [
-  { 'StartPosition' : Vector2(  120 , 950 ), 'CameraLimits' : [  -64, 3984 ] }
-  # repeat object above inside this array when we starting adding new levels
-  ]
-
-#var currentLevel : = 0
-
 func gotoScene( which : int = -1 ) -> void :
   GameData.savePlayerObj.level = which; # update the level for the player
   #print("Level")
   #print(GameData.savePlayerObj.level)
   GameData.savePlayerData(); # call function in gamedata.gd to save player data when a portal is reached
   var _scene = get_tree().change_scene("res://Menus/PlanetMenu.tscn")
-  
-  #if which < 0 :
-    #which = currentLevel
 
-  #if which >= level.size() :
-    #print( "Finished last level, so going back to the beginning." )
-    #which = 0
-  #position = level[which][ 'StartPosition' ]
-  #$Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
-  #$Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
-
-
-func _on_ObstacleDetector_body_entered(_body):
-  print( "Player got hit by a Rock." )
-  
-  
-  healthPoints = healthPoints - 1
-  var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
-  HealthLabel.text = str(healthPoints)
-  GameData.savePlayerObj.health = healthPoints; # update the health points for the player
-  checkHealth()

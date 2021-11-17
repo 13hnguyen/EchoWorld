@@ -25,9 +25,9 @@ __meta__ = {
 }
 
 [node name="BlackStarsBackground" type="TextureRect" parent="."]
-margin_top = -0.445465
-margin_right = 1800.0
-margin_bottom = 1181.55
+margin_left = -537.0
+margin_right = 2566.0
+margin_bottom = 1417.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 2

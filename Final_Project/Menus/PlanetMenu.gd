@@ -17,8 +17,7 @@ func _on_Continue_pressed() -> void:
   print("loading level ", nxtlvl)
 
   if (nxtlvl  == 1) :
-    print("level 1 is not created yet")
-    #var _scene = get_tree().change_scene("res://Level/Level1.tscn")
+    var _scene = get_tree().change_scene("res://Level/Level1.tscn")
   elif (nxtlvl == 2) :
     print("level 2 is not created yet")
     #var _scene = get_tree().change_scene("res://Level/Level2.tscn")

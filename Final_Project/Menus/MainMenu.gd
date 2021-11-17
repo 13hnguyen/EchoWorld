@@ -3,11 +3,19 @@ extends Node2D
 var creditsfile = 'res://credits.txt'
 var creditstext = ""
 
+###############################################################################################################
 # function to start the background music playing and load in the credits text file
+
 func _ready() -> void :
   $MenuMusic.play()
   load_file(creditsfile)
+  
+###############################################################################################################
 
+
+
+
+###############################################################################################################
 # function to popup player creation from main menu when clicked "new game"
 func _on_NewGame_pressed() -> void:
   print("new game menu")
@@ -23,8 +31,15 @@ func _on_PlayerCreation_confirmed() -> void:
   GameData.saveNewPlayer(playerName)
   var _scene = get_tree().change_scene("res://Level/Level.tscn")
   print("player created. starting level")
+  
+###############################################################################################################
 
+
+
+
+###############################################################################################################
 # function to fill in player names for dropdown when clicked "load game"
+
 func _on_LoadGame_pressed() -> void:
   print("load game menu")
   $MenuOptions/LoadGame/LoadPlayer/PlayerList.clear()
@@ -42,7 +57,14 @@ func _on_PlayerList_item_activated(index: int) -> void:
   print("player selected to load")
   GameData.loadPlayer(index)
 
+###############################################################################################################
+
+
+
+
+###############################################################################################################
 # function to popup player deletion from main menu when click "delete game"
+
 func _on_DeleteGame_pressed() -> void:
   print("delete game menu")
   get_node("MenuOptions/DeleteGame/PlayerDeletion").popup()
@@ -57,19 +79,40 @@ func _on_PlayerDeletion_confirmed() -> void:
     print("player name entered to delete: " + deleteName)
     GameData.deletePlayer(deleteName)
 
+###############################################################################################################
+
+
+
+
+###############################################################################################################
 # function to show movement controls from main menu when clicked "controls"
+
 func _on_Controls_pressed() -> void:
   print("game controls menu")
   get_node("MenuOptions/Controls/PlayerControls").popup()
 
+###############################################################################################################
+
+
+
+
+###############################################################################################################
 # function to show game credits from main menu when clicked "credits"
+
 func _on_Credits_pressed() -> void:
   print("credits menu")
   get_node("MenuOptions/Credits/CreditDialog").popup()
   var credits = get_node("MenuOptions/Credits/CreditDialog")
   credits.set_text(creditstext)
+  
+###############################################################################################################
 
+
+
+
+###############################################################################################################
 # function to read in the credits text file
+
 func load_file(file):
     var f = File.new()
     f.open(file, File.READ)
@@ -80,6 +123,15 @@ func load_file(file):
     f.close()
     return
 
+###############################################################################################################
+
+
+
+
+###############################################################################################################
 # function to quit the game from main menu when clicked "quit"
+
 func _on_Quit_pressed() -> void:
   get_tree().quit( 0 )
+
+###############################################################################################################
