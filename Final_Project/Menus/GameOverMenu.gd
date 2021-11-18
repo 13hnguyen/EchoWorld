@@ -17,6 +17,7 @@ func _on_BackToMainMenu_pressed() -> void:
 
 func _on_TryAgain_pressed() -> void:
   print("Player is trying again")
+  GameData.tryAgain = true
   var nxtlvl = GameData.savePlayerObj.level
   print("reloading level ", nxtlvl)
 

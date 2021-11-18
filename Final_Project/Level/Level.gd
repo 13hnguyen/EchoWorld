@@ -20,6 +20,10 @@ func _ready() -> void :
   else :
     score.set_text(str(0))
     hp.set_text(str(3))
+    
+  if GameData.tryAgain == true:
+    hp.set_text(str(3))
+    GameData.tryAgain = false
 
   # Start the asteroid generation
   AsteroidGen = AsteroidGenInstance.instance()

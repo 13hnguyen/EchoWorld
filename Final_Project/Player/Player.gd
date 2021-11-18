@@ -7,6 +7,11 @@ var movement : Vector2
 func _ready() -> void:
   if GameData.loadGame == false:
     GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
+  elif GameData.loadGame == true:
+    healthPoints = GameData.savePlayerObj.health
+  if GameData.tryAgain == true: #sets the players health to 3 if they die and restart
+    healthPoints = 3
+    #GameData.tryAgain = false  
     #print("Health:")
     #print(GameData.savePlayerObj.health)
 
