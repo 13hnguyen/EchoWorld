@@ -25,9 +25,10 @@ __meta__ = {
 }
 
 [node name="BlackStarsBackground" type="TextureRect" parent="."]
-margin_left = -537.0
-margin_right = 2566.0
-margin_bottom = 1417.0
+margin_left = -538.682
+margin_top = -1.33484
+margin_right = 2564.32
+margin_bottom = 1415.67
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 2
@@ -70,33 +71,33 @@ __meta__ = {
 }
 
 [node name="LevelNumber" type="RichTextLabel" parent="."]
-margin_left = 34.5048
-margin_top = 29.849
-margin_right = 151.505
-margin_bottom = 46.849
+margin_left = 35.0
+margin_top = 28.0
+margin_right = 320.0
+margin_bottom = 45.0
 rect_scale = Vector2( 3.8, 3.8 )
 custom_colors/font_color_selected = Color( 0.827451, 0.933333, 0.0901961, 1 )
-text = "Next Planet: 0"
+text = "Next Planet:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Planet 0" type="Label" parent="."]
-margin_left = 172.356
-margin_top = 310.941
-margin_right = 231.356
-margin_bottom = 326.941
+margin_left = 157.673
+margin_top = 314.946
+margin_right = 223.673
+margin_bottom = 330.946
 rect_scale = Vector2( 2.5, 2.5 )
-text = "Planet 0"
+text = "Ademetus"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Planet0" type="TextureButton" parent="."]
 margin_left = 155.702
-margin_top = 344.828
+margin_top = 342.828
 margin_right = 475.702
-margin_bottom = 664.828
+margin_bottom = 662.828
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 6 )
 __meta__ = {
@@ -104,12 +105,12 @@ __meta__ = {
 }
 
 [node name="Planet 1" type="Label" parent="."]
-margin_left = 377.82
-margin_top = 688.607
-margin_right = 436.82
-margin_bottom = 704.607
+margin_left = 383.159
+margin_top = 692.612
+margin_right = 442.159
+margin_bottom = 708.612
 rect_scale = Vector2( 2.5, 2.5 )
-text = "Planet 1"
+text = "Pleiades"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,12 +127,12 @@ __meta__ = {
 }
 
 [node name="Planet 2" type="Label" parent="."]
-margin_left = 670.005
-margin_top = 406.339
-margin_right = 729.005
-margin_bottom = 422.339
+margin_left = 689.324
+margin_top = 409.997
+margin_right = 748.324
+margin_bottom = 425.997
 rect_scale = Vector2( 2.5, 2.5 )
-text = "Planet 2"
+text = "Boreas"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -148,12 +149,12 @@ __meta__ = {
 }
 
 [node name="Planet 3" type="Label" parent="."]
-margin_left = 944.52
-margin_top = 741.617
-margin_right = 1003.52
-margin_bottom = 757.617
+margin_left = 953.888
+margin_top = 746.956
+margin_right = 1012.89
+margin_bottom = 762.956
 rect_scale = Vector2( 2.5, 2.5 )
-text = "Planet 3"
+text = "Cerberus"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -170,21 +171,21 @@ __meta__ = {
 }
 
 [node name="Planet 4" type="Label" parent="."]
-margin_left = 1100.41
-margin_top = 260.528
-margin_right = 1159.41
-margin_bottom = 276.528
+margin_left = 1117.76
+margin_top = 259.193
+margin_right = 1176.76
+margin_bottom = 275.193
 rect_scale = Vector2( 2.5, 2.5 )
-text = "Planet 4"
+text = "Eros"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Planet4" type="TextureButton" parent="."]
-margin_left = 1055.67
-margin_top = 253.414
-margin_right = 1685.67
-margin_bottom = 883.414
+margin_left = 1044.99
+margin_top = 244.07
+margin_right = 1674.99
+margin_bottom = 874.07
 rect_scale = Vector2( 0.35, 0.35 )
 texture_normal = ExtResource( 5 )
 __meta__ = {
@@ -192,12 +193,12 @@ __meta__ = {
 }
 
 [node name="Planet 5" type="Label" parent="."]
-margin_left = 1376.51
-margin_top = 544.684
-margin_right = 1435.51
-margin_bottom = 560.684
+margin_left = 1401.58
+margin_top = 546.019
+margin_right = 1460.58
+margin_bottom = 562.019
 rect_scale = Vector2( 2.5, 2.5 )
-text = "Planet 5"
+text = "Icarus"
 __meta__ = {
 "_edit_use_anchors_": false
 }

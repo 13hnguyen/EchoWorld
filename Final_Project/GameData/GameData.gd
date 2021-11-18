@@ -5,11 +5,14 @@ extends Node
 # filename path for the json file
 const filename_path = "res://GameData/gamedata.json"
 
+# array to hold planet names. these are used in the planet menu and are in ascending order of planets
+const planetNames = ["Admetus","Pleiades","Boreas","Cerberus","Eros","Icarus"]
+
 var data = {}; # object that is saved/loaded to/from json file
 var newPlayerObj = {}; # object for new player creation
 var savePlayerObj = {}; # object for saving data for existing player
 var loadGame = false; # default is false because the default is expected to be a new game
-var tryAgain = false; #default is false.  turns true when when player restarts from death to reset HP and then becomes false again
+var tryAgain = false; # default is false.  turns true when when player restarts from death to reset HP and then becomes false again
 
 func _ready() -> void :
   savePlayerObj.score = -1; # used to check if the player earned any points from the level in savePlayerData function
