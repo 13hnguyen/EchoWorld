@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Music/Loyalty_Freak_Music_-_04_-_Cant_Stop_My_Feet_.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
-[ext_resource path="res://Level/Level.gd" type="Script" id=3]
+[ext_resource path="res://Level/Level0.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Rock/Rock.tscn" type="PackedScene" id=6]
