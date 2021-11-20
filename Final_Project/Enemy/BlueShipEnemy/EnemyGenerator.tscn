@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Enemy/EnemyGenerator.gd" type="Script" id=1]
+[ext_resource path="res://Enemy/BlueShipEnemy/EnemyGenerator.gd" type="Script" id=1]
 [ext_resource path="res://Art/Enemies/alian.png" type="Texture" id=2]
 
 [node name="EnemyGenerator" type="Node2D"]

@@ -14,7 +14,7 @@ func _ready() -> void:
 ##########################################################################################################
 
 # load the bullet scene
-var bullet = load("res://Bullet/Bullet.tscn")
+var bullet = load("res://Bullet/PlayerBullet/Bullet.tscn")
 
 # looking for input to signal that the player shoots a bullet
 func _input( event : InputEvent ) -> void :

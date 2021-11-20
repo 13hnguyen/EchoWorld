@@ -6,7 +6,7 @@ var speed    : = Vector2( 450.0, 50.0 )
 var velocity : = Vector2.ZERO
 
 # load the bullet scene
-var bullet = load("res://Bullet/EnemyBullet.tscn")
+var bullet = load("res://Bullet/EnemyBullets/BlueShipBullet/EnemyBullet.tscn")
 
 func _ready() -> void:
   velocity.x = -speed.x

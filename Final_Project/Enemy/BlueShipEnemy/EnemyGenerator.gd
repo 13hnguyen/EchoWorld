@@ -12,8 +12,7 @@ var SpawnVariance = 0.5
 # Keeps track of time since last enemy was spawned
 var TimeSince = 0.0
 
-# Referrence to rock node script
-var EnemyNode = preload("res://Enemy/Enemy.tscn")
+var EnemyNode = preload("res://Enemy/BlueShipEnemy/Enemy.tscn")
 
 # Debug options
 var DrawDebugRect = true
