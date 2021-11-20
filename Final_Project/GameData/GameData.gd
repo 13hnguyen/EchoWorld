@@ -11,11 +11,9 @@ const planetNames = ["Admetus","Pleiades","Boreas","Cerberus","Eros","Icarus"]
 var data = {}; # object that is saved/loaded to/from json file
 var newPlayerObj = {}; # object for new player creation
 var savePlayerObj = {}; # object for saving data for existing player
-var loadGame = false; # default is false because the default is expected to be a new game
 var tryAgain = false; # default is false.  turns true when when player restarts from death to reset HP and then becomes false again
 
 func _ready() -> void :
-  savePlayerObj.score = -1; # used to check if the player earned any points from the level in savePlayerData function
   
   # load the data from the json file
   var loadFile = File.new()
@@ -48,15 +46,12 @@ func _ready() -> void :
 
 func saveNewPlayer(player) -> void :
   print("new player name received: " + player)
-  loadGame = false;
   savePlayerObj.name = player; # update the current player name to be seen outside the scope of this function
   savePlayerObj.level = 0; # default new players to level 0 (this is important for re-trying after death screen since the level only updates when the player hits a portal)
 
   # create a new player object in json format
   newPlayerObj.name = player;
   newPlayerObj.level = 0;
-  newPlayerObj.score = 0;
-  newPlayerObj.health = 3;
   #print(newPlayerObj)
 
   data[0].players.push_back(newPlayerObj)
@@ -82,12 +77,6 @@ func savePlayerData() -> void :
   print("saving player data...")
   #print(savePlayerObj.name)
   #print(savePlayerObj.level)
-  #print(savePlayerObj.health)
-  
-  # if the player earned no points during level, then score will still be default value -1, otherwise score comes from bullet.gd script for hitting targets
-  if (savePlayerObj.score == -1) :
-    savePlayerObj.score = 0;
-  #print(savePlayerObj.score)
   
   # overwrite the old player data with the new data
   for n in data[0].players :
@@ -96,8 +85,6 @@ func savePlayerData() -> void :
       print("found existing player in file...overwritting data")
       n.name = savePlayerObj.name
       n.level = savePlayerObj.level
-      n.health = savePlayerObj.health
-      n.score = savePlayerObj.score
     else :
       print("player does not match, checking next player in file")
   #print(data)
@@ -119,10 +106,7 @@ func savePlayerData() -> void :
 
 func loadPlayer(index) -> void :
   var player = data[0].players[index]
-  loadGame = true # swap to true to trigger the score and health to use these values from the bullet.gd and player.gd scripts
   savePlayerObj.name = player.name
-  savePlayerObj.score = player.score
-  savePlayerObj.health = player.health
   savePlayerObj.level = player.level
   print(savePlayerObj)
   print("loading player data for " + player.name)

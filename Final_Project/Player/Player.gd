@@ -5,15 +5,8 @@ var healthPoints : = 3
 var movement : Vector2
 
 func _ready() -> void:
-  if GameData.loadGame == false:
-    GameData.savePlayerObj.health = healthPoints; # set the initial health points for the player
-  elif GameData.loadGame == true:
-    healthPoints = GameData.savePlayerObj.health
   if GameData.tryAgain == true: #sets the players health to 3 if they die and restart
     healthPoints = 3
-    #GameData.tryAgain = false  
-    #print("Health:")
-    #print(GameData.savePlayerObj.health)
 
 
 ##########################################################################################################
@@ -70,10 +63,7 @@ func _on_EnemyDetector_body_entered( body : Node ) -> void :
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
-  GameData.savePlayerObj.health = healthPoints; # update the health points for the player
   checkHealth()
-  #print("Health:")
-  #print(GameData.savePlayerObj.health)
 
 # function to detect whether the player has been hit by another Area 2D (ie. enemy bullet, portal, explosion)
 func _on_EnemyDetector_area_entered( area: Area2D) -> void:
@@ -87,7 +77,6 @@ func _on_EnemyDetector_area_entered( area: Area2D) -> void:
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
-  GameData.savePlayerObj.health = healthPoints; # update the health points for the player
   checkHealth()
 
 # function to determine if the health of the player == 0 (meaning the player died)

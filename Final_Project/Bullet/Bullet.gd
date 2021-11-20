@@ -40,11 +40,8 @@ func _on_Bullet_body_entered(body: Node) -> void:
   elif body.is_in_group("rock") :
    body.queue_free()
   
-  # the lines below are not supposed to be part of an elif, so please do not put it in there again. they are supposed to happen at the end of the function no matter what if,elif conditional was true
-  GameData.savePlayerObj.score = newScore; # update the score for the player
+  # the line below is not supposed to be part of an if or elif, so please do not put it in there again
   queue_free()
-  #print("Score")
-  #print(GameData.savePlayerObj.score)
 
 ###############################################################################################################
 
