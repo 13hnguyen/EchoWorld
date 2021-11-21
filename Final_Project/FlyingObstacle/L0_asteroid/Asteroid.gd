@@ -40,7 +40,7 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
   # Only shadows should interact with 
   if is_a_parent_of(body) :
     
-    var Impact = preload("res://Asteroid/AsteroidExplosion.tscn").instance()
+    var Impact = preload("res://FlyingObstacle/L0_asteroid/AsteroidExplosion.tscn").instance()
     get_parent().call_deferred("add_child", Impact)
     Impact.global_position = $Shadow.global_position
     Impact.set_scale(get_scale())

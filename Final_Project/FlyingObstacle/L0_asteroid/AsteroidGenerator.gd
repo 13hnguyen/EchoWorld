@@ -18,7 +18,7 @@ var SpawnVariance = 0.5
 var TimeSince = 0.0
 
 # Referrence to asteroid node script
-var AsteroidNode = preload("res://Asteroid/Asteroid.tscn")
+var AsteroidNode = preload("res://FlyingObstacle/L0_asteroid/Asteroid.tscn")
 
 
 # Debug options
