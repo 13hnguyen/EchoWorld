@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Music/Batalha #1.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
 [ext_resource path="res://Level/Level2.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GndObstacle/L0_rocks/Rock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GndObstacle/L2_hives/BeeHive.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Backgrounds/L2Universe.png" type="Texture" id=7]
 [ext_resource path="res://Art/Backgrounds/ground2.png" type="Texture" id=8]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GndObstacle/L2_hives/HiveShootup.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -86,28 +87,49 @@ tile_data = PoolIntArray( -327681, 0, 0, -393155, 0, 0, -262145, 0, 0, -327619, 
 position = Vector2( 92, 954 )
 
 [node name="Portal" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3819.58, 905.191 )
+position = Vector2( 3835.6, 905.191 )
 
 [node name="BackgndMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 467.671, 786.917 )
+[node name="StaticBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 382.197, 780.721 )
 
-[node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1022.48, 975.644 )
+[node name="StaticBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3078.1, 756.535 )
 
-[node name="RigidBody2D3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1502.49, 975.644 )
+[node name="StaticBody2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2528.16, 990.861 )
 
-[node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2474.23, 960.034 )
+[node name="StaticBody2D4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1566.04, 763.909 )
 
-[node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2974.06, 794.596 )
+[node name="StaticBody2D5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1103.52, 989.43 )
 
-[node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2038.71, 807.321 )
+[node name="StaticBody2D6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2136.4, 813.598 )
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 551.418, 733.719 )
+
+[node name="StaticBody2D8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 827.494, 906.752 )
+
+[node name="StaticBody2D9" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1932.14, 764.031 )
+
+[node name="StaticBody2D10" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1815.89, 780.487 )
+
+[node name="StaticBody2D11" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2455.82, 741.127 )
+
+[node name="StaticBody2D12" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2736.07, 905.1 )
+
+[node name="StaticBody2D13" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3721.81, 786.191 )
 
 [node name="On Screen Labels" type="CanvasLayer" parent="."]
 
