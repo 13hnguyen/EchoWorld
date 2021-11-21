@@ -19,7 +19,7 @@ func _on_Bullet_body_entered(body: Node) -> void:
     newScore = newScore + 100
     ScoreLabel.text = str(newScore)
     # spawn explosion in air
-    var Impact = preload("res://Asteroid/AsteroidExplosion.tscn").instance()
+    var Impact = preload("res://FlyingObstacle/L0_asteroid/AsteroidExplosion.tscn").instance()
     body.get_parent().call_deferred("add_child", Impact)
     Impact.global_position = body.global_position
     Impact.set_scale(body.get_scale())
@@ -30,7 +30,7 @@ func _on_Bullet_body_entered(body: Node) -> void:
     newScore = newScore + 10
     ScoreLabel.text = str(newScore)
     # spawn explosion in air
-    var Impact = preload("res://Asteroid/AsteroidExplosion.tscn").instance()
+    var Impact = preload("res://FlyingObstacle/L0_asteroid/AsteroidExplosion.tscn").instance()
     body.get_parent().call_deferred("add_child", Impact)
     Impact.global_position = body.global_position
     Impact.set_scale(body.get_scale())

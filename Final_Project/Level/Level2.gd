@@ -1,6 +1,6 @@
 extends Node
 
-var AsteroidGenInstance = preload("res://Asteroid/AsteroidGenerator.tscn")
+var AsteroidGenInstance = preload("res://FlyingObstacle/L0_asteroid/AsteroidGenerator.tscn")
 var AsteroidGen
 var EnemyGen
 
