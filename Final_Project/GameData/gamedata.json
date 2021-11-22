@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-[{"players":[{"level":0,"name":"John"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"},{"level":1,"name":"John Doe"}]}]
-=======
-[{"players":[{"level":0,"name":"John"}]}]
->>>>>>> 3c8818034adf00fd2bacbb33334bb22cc4099601
+[{"players":[{"level":0,"name":"John"},{"level":0,"name":"John Doe"}]}]
