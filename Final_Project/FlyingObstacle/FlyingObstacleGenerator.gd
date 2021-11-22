@@ -18,11 +18,14 @@ var SpawnVariance = 0.5
 var TimeSince = 0.0
 
 # Referrence to asteroid node script
-var AsteroidNode = preload("res://FlyingObstacle/L0_asteroid/Asteroid.tscn")
+var ObstacleNode = preload("res://FlyingObstacle/L0_asteroid/Asteroid.tscn")
 
 
 # Debug options
 var DrawDebugRect = false
+
+func set_obstacle_node(path : String):
+  ObstacleNode = load(path);
 
 
 # Called when the node enters the scene tree for the first time.
@@ -42,8 +45,11 @@ func _process(delta):
     #print("new asteroid")
     TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
     
+    if(ObstacleNode == null) :
+      print("ERROR: AsteroidNode was set to an invalid path.");
+    
     # Create the asteroid ndoe and set it's position randomly within Min and Max
-    var Asteroid = AsteroidNode.instance()
+    var Asteroid = ObstacleNode.instance()
     get_parent().add_child(Asteroid)
     
     # Randomly hit somewhere on the ground

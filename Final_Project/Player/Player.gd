@@ -63,6 +63,10 @@ func _on_EnemyDetector_body_entered( body : Node ) -> void :
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
+  
+  if body.is_in_group("explosion") :
+    body.call_deferred("delete_collision")
+  
   checkHealth()
 
 # function to detect whether the player has been hit by another Area 2D (ie. enemy bullet, portal, explosion)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_SpriteSheet.png-b43e5e697a0ae6d56a7abcee2aebd607.stex"
+path="res://.import/GermShadow.png-edfb1ea11e7a1168197e7fb21024751c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Obstacles/fire_SpriteSheet.png"
-dest_files=[ "res://.import/fire_SpriteSheet.png-b43e5e697a0ae6d56a7abcee2aebd607.stex" ]
+source_file="res://Art/Asteroids/GermShadow.png"
+dest_files=[ "res://.import/GermShadow.png-edfb1ea11e7a1168197e7fb21024751c.stex" ]
 
 [params]
 

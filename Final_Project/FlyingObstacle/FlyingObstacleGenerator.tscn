@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://FlyingObstacle/L0_asteroid/AsteroidGenerator.gd" type="Script" id=1]
+[ext_resource path="res://FlyingObstacle/FlyingObstacleGenerator.gd" type="Script" id=1]
 [ext_resource path="res://Art/Asteroids/Asteroid Generator.png" type="Texture" id=2]
 
 [node name="AsteroidGenerator" type="Node2D"]

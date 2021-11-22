@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Music/Loyalty_Freak_Music_-_04_-_Cant_Stop_My_Feet_.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GndObstacle/L4_fire/Fire.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GndObstacle/L4_fire/Firebig.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GndObstacle/L4_fire/Firesmall.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -93,7 +95,7 @@ position = Vector2( 3819.58, 905.191 )
 stream = ExtResource( 1 )
 
 [node name="Mine" parent="." instance=ExtResource( 6 )]
-position = Vector2( 318, 846 )
+position = Vector2( 245.875, 864.385 )
 script = null
 
 [node name="Mine2" parent="." instance=ExtResource( 6 )]
@@ -124,6 +126,30 @@ position = Vector2( 2446.93, 727.172 )
 
 [node name="Fire2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1800.69, 774.828 )
+
+[node name="Fire3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 533.553, 723.916 )
+
+[node name="Fire4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3705.64, 776.242 )
+
+[node name="Firebig" parent="." instance=ExtResource( 13 )]
+position = Vector2( 818.931, 932.796 )
+
+[node name="Firebig2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2729.54, 932.796 )
+
+[node name="Firebig3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2943.08, 746.12 )
+
+[node name="Firesmall" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1650.49, 757.434 )
+
+[node name="Firesmall2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3552.61, 751.777 )
+
+[node name="Firesmall3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2081.83, 921.483 )
 
 [node name="On Screen Labels" type="CanvasLayer" parent="."]
 
