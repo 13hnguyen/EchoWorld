@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Music/makai-symphony-dragon-slayer.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
-[ext_resource path="res://Level/Level0.gd" type="Script" id=3]
+[ext_resource path="res://Level/Level5.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GndObstacle/L0_rocks/Rock.tscn" type="PackedScene" id=6]
@@ -46,6 +46,7 @@ __meta__ = {
 }
 
 [node name="Universe" parent="." instance=ExtResource( 5 )]
+visible = false
 margin_left = -64.0
 margin_right = 3979.0
 margin_bottom = 1536.0
