@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-chase.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Art/Backgrounds/stars.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GndObstacle/L4_fire/Fire.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GndObstacle/L4_fire/Firesmall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GndObstacle/L4_fire/Firebig.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -91,22 +93,22 @@ position = Vector2( 3819.58, 905.191 )
 [node name="BackgndMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 6 )]
+[node name="Rock1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 385.671, 804.917 )
 
-[node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
+[node name="Rock2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 994.48, 969.644 )
 
-[node name="RigidBody2D3" parent="." instance=ExtResource( 6 )]
+[node name="Rock3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1502.49, 975.644 )
 
-[node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
+[node name="Rock4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2474.23, 960.034 )
 
-[node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
+[node name="Rock5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2974.06, 794.596 )
 
-[node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
+[node name="Rock6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2038.71, 807.321 )
 
 [node name="Fire" parent="." instance=ExtResource( 12 )]
@@ -117,6 +119,15 @@ position = Vector2( 1814, 778 )
 
 [node name="Fire3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2454, 726 )
+
+[node name="Firesmall" parent="." instance=ExtResource( 13 )]
+position = Vector2( 3726, 812 )
+
+[node name="Firebig" parent="." instance=ExtResource( 14 )]
+position = Vector2( 834, 938 )
+
+[node name="Firebig2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2735, 940 )
 
 [node name="On Screen Labels" type="CanvasLayer" parent="."]
 
