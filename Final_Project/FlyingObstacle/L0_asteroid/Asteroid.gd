@@ -39,10 +39,14 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
   
   # Only shadows should interact with 
   if is_a_parent_of(body) :
-    
-    var Impact = preload("res://FlyingObstacle/L0_asteroid/AsteroidExplosion.tscn").instance()
-    get_parent().call_deferred("add_child", Impact)
-    Impact.global_position = $Shadow.global_position
-    Impact.set_scale(get_scale())
+    on_explode($Shadow)
     
     queue_free()
+    
+# explosion method called by shadow detector or the bullet that hits it
+func on_explode(body : Node) :
+  
+  var Impact = preload("res://FlyingObstacle/L0_asteroid/AsteroidExplosion.tscn").instance()
+  get_parent().call_deferred("add_child", Impact)
+  Impact.global_position = body.global_position
+  Impact.set_scale(get_scale())

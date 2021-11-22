@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-superepic.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
-[ext_resource path="res://Level/Level0.gd" type="Script" id=3]
+[ext_resource path="res://Level/Level1.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GndObstacle/L0_rocks/Rock.tscn" type="PackedScene" id=6]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FlyingObstacle/L1_germ/Germ.tscn" type="PackedScene" id=12]
+[ext_resource path="res://FlyingObstacle/L1_germ/GermExplosion.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -59,6 +61,8 @@ texture = ExtResource( 10 )
 speed = 0.015
 
 [node name="Ground" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.00046658
+anchor_right = 0.00046658
 margin_left = -5.24512
 margin_top = -48.0
 margin_right = 3909.75
@@ -153,3 +157,9 @@ __meta__ = {
 [node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 11 )]
 visible = false
 position = Vector2( 1.5874, 1.58733 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1542.17, 883.189 )
+
+[node name="Germ" parent="KinematicBody2D" instance=ExtResource( 12 )]
+position = Vector2( -168.571, -43.4987 )

@@ -26,14 +26,11 @@ func _on_Bullet_body_entered(body: Node) -> void:
     body.queue_free()
     print( "Enemy got hit by bullet" )
   
-  elif body.is_in_group("asteroid") :
+  elif body.is_in_group("flying") :
     newScore = newScore + 10
     ScoreLabel.text = str(newScore)
     # spawn explosion in air
-    var Impact = preload("res://FlyingObstacle/L0_asteroid/AsteroidExplosion.tscn").instance()
-    body.get_parent().call_deferred("add_child", Impact)
-    Impact.global_position = body.global_position
-    Impact.set_scale(body.get_scale())
+    body.call_deferred("on_explode", body)
     body.queue_free()
     print( "Asteroid got hit by bullet" )
     
