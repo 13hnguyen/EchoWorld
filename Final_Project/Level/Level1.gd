@@ -1,10 +1,10 @@
 extends Node
 
-var AsteroidGenInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
-var AsteroidGen
+var GermGeneratorInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
+var GermGen
 var EnemyGen
 
-var AsteroidGenPlayerDistance = 0.0
+var GermGenPlayerDistance = 0.0
 var EnemyGenPlayerDistance = 0.0
 
 func _ready() -> void :
@@ -19,14 +19,14 @@ func _ready() -> void :
     hp.set_text(str(3))
     GameData.tryAgain = false
 
-  # Start the asteroid generation
-  AsteroidGen = AsteroidGenInstance.instance()
-  add_child(AsteroidGen)
-  AsteroidGen.position = Vector2(1300, -100)
-  # set the asteroid node
-  AsteroidGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L1_germ/Germ.tscn")
+  # Start the Germ generation
+  GermGen = GermGeneratorInstance.instance()
+  add_child(GermGen)
+  GermGen.position = Vector2(1300, -100)
+  # set the Germ node
+  GermGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L1_germ/Germ.tscn")
   
-  AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
+  GermGenPlayerDistance = GermGen.position.x - $Player.position.x
   
   #Start the enemy generation
   EnemyGen = preload("res://Enemy/BlueShipEnemy/EnemyGenerator.tscn").instance()
@@ -52,5 +52,5 @@ func _ready() -> void :
   
   
 func _process(_delta):
-  AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
+  GermGen.position.x = $Player.position.x + GermGenPlayerDistance
   EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance
