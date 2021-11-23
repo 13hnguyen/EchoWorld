@@ -95,7 +95,7 @@ position = Vector2( 3819.58, 905.191 )
 stream = ExtResource( 1 )
 
 [node name="Mine" parent="." instance=ExtResource( 6 )]
-position = Vector2( 245.875, 864.385 )
+position = Vector2( 211.079, 813.874 )
 script = null
 
 [node name="Mine2" parent="." instance=ExtResource( 6 )]
@@ -111,7 +111,7 @@ position = Vector2( 1476, 798 )
 script = null
 
 [node name="Mine5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1242, 984 )
+position = Vector2( 1127.51, 986.245 )
 script = null
 
 [node name="Mine6" parent="." instance=ExtResource( 6 )]
