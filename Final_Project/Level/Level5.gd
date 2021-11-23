@@ -1,6 +1,6 @@
 extends Node
 
-var AsteroidGenInstance = preload("res://FlyingObstacle/L0_asteroid/AsteroidGenerator.tscn")
+var AsteroidGenInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
 var AsteroidGen
 var EnemyGen
 
@@ -23,6 +23,9 @@ func _ready() -> void :
   AsteroidGen = AsteroidGenInstance.instance()
   add_child(AsteroidGen)
   AsteroidGen.position = Vector2(1300, -100)
+  
+  # TODO Hadrien: Put your referrence to your flying obstacle here
+  AsteroidGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L0_asteroid/Asteroid.tscn")
   
   AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
