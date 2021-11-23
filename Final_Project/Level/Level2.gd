@@ -1,10 +1,10 @@
 extends Node
 
-var AsteroidGenInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
-var AsteroidGen
+var YellowGooeyBallGeneratorInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
+var YellowGooeyBallGen
 var EnemyGen
 
-var AsteroidGenPlayerDistance = 0.0
+var YellowGooeyBallGenPlayerDistance = 0.0
 var EnemyGenPlayerDistance = 0.0
 
 func _ready() -> void :
@@ -19,12 +19,14 @@ func _ready() -> void :
     hp.set_text(str(3))
     GameData.tryAgain = false
 
-  # Start the asteroid generation
-  AsteroidGen = AsteroidGenInstance.instance()
-  add_child(AsteroidGen)
-  AsteroidGen.position = Vector2(1300, -100)
+  # Start the Yellow Gooey Ball generation
+  YellowGooeyBallGen = YellowGooeyBallGeneratorInstance.instance()
+  add_child(YellowGooeyBallGen)
+  YellowGooeyBallGen.position = Vector2(1300, -100)
+  # set the Yellow Gooey Ball node
+  YellowGooeyBallGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L2_yellowgooeyball/YellowGooeyBall.tscn")
   
-  AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
+  YellowGooeyBallGenPlayerDistance = YellowGooeyBallGen.position.x - $Player.position.x
   
   #Start the enemy generation
   EnemyGen = preload("res://Enemy/BeeEnemy/BeeEnemyGenerator.tscn").instance()
@@ -34,21 +36,11 @@ func _ready() -> void :
   add_child(EnemyGen)
   
   EnemyGenPlayerDistance = EnemyGen.position.x - $Player.position.x
-  
-  #Start the rock generation
-  #var RockGen = preload("res://Rock/RockGenerator.tscn")
-  #var rockGen = RockGen.instance()
-  #rockGen.position = Vector2(2000, 870)
-  
-  # Add rock generator to canvas layer since it follows the player
-    
-  #get_child(canvasIndex).add_child(rockGen)
-  
-  
+
   # Start the background music playing.
   $BackgndMusic.play()
   
   
 func _process(_delta):
-  AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
+  YellowGooeyBallGen.position.x = $Player.position.x + YellowGooeyBallGenPlayerDistance
   EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance

@@ -103,13 +103,13 @@ position = Vector2( 994.48, 969.644 )
 position = Vector2( 1502.49, 975.644 )
 
 [node name="Rock4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2474.23, 960.034 )
+position = Vector2( 2495.61, 968.943 )
 
 [node name="Rock5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2974.06, 794.596 )
+position = Vector2( 3137.99, 767.869 )
 
 [node name="Rock6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2038.71, 807.321 )
+position = Vector2( 2111.76, 773.467 )
 
 [node name="Fire" parent="." instance=ExtResource( 12 )]
 position = Vector2( 548, 726 )
