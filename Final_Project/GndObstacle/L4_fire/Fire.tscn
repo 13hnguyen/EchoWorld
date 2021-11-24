@@ -43,3 +43,5 @@ hframes = 13
 
 [node name="AnimationFire" type="AnimationPlayer" parent="."]
 anims/fire = SubResource( 2 )
+
+[node name="LionSpawnLocation" type="Position2D" parent="."]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Music/Loyalty_Freak_Music_-_04_-_Cant_Stop_My_Feet_.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
-[ext_resource path="res://Level/Level0.gd" type="Script" id=3]
+[ext_resource path="res://Level/Level4.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GndObstacle/L4_mine/mine.tscn" type="PackedScene" id=6]
@@ -14,6 +14,7 @@
 [ext_resource path="res://GndObstacle/L4_fire/Fire.tscn" type="PackedScene" id=12]
 [ext_resource path="res://GndObstacle/L4_fire/Firebig.tscn" type="PackedScene" id=13]
 [ext_resource path="res://GndObstacle/L4_fire/Firesmall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GndObstacle/L4_fire/L4_fire.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -96,42 +97,40 @@ stream = ExtResource( 1 )
 
 [node name="Mine" parent="." instance=ExtResource( 6 )]
 position = Vector2( 204.729, 794.825 )
-script = null
 
 [node name="Mine2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3442, 1002 )
-script = null
 
 [node name="Mine3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2256, 982 )
-script = null
 
 [node name="Mine4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1476, 798 )
-script = null
 
 [node name="Mine5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1127.51, 986.245 )
-script = null
 
 [node name="Mine6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3046.24, 952.357 )
-script = null
 
 [node name="Fire" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1024.54, 699.414 )
+script = ExtResource( 15 )
 
 [node name="Fire1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2446.93, 727.172 )
 
 [node name="Fire2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1800.69, 774.828 )
+script = ExtResource( 15 )
 
 [node name="Fire3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 533.553, 723.916 )
+script = ExtResource( 15 )
 
 [node name="Fire4" parent="." instance=ExtResource( 12 )]
 position = Vector2( 3705.64, 776.242 )
+script = ExtResource( 15 )
 
 [node name="Firebig" parent="." instance=ExtResource( 13 )]
 position = Vector2( 818.931, 932.796 )
