@@ -42,7 +42,6 @@ scale = Vector2( 1.12472, 1.05427 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 4
-frame = 4
 
 [node name="AnimationFire" type="AnimationPlayer" parent="."]
 anims/fire = SubResource( 2 )

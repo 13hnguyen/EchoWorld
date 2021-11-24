@@ -40,7 +40,6 @@ position = Vector2( -10.6654, -17.1954 )
 scale = Vector2( 1.12472, 1.05427 )
 texture = ExtResource( 1 )
 hframes = 13
-frame = 11
 
 [node name="AnimationFire" type="AnimationPlayer" parent="."]
 anims/fire = SubResource( 2 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ground1.png-12beb465636c8d394db8e83f6bf52f5d.stex"
+path="res://.import/whitesmoke-Sheet.png-e3ce53e539c9f8c9b6dd6e012dd0f09e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ground1.png"
-dest_files=[ "res://.import/ground1.png-12beb465636c8d394db8e83f6bf52f5d.stex" ]
+source_file="res://Art/Obstacles/whitesmoke-Sheet.png"
+dest_files=[ "res://.import/whitesmoke-Sheet.png-e3ce53e539c9f8c9b6dd6e012dd0f09e.stex" ]
 
 [params]
 

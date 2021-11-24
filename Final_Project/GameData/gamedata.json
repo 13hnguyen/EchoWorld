@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"players":[{"level":0,"name":"John"},{"level":2,"name":"John Doe"},{"level":4,"name":"Sarah"},{"level":0,"name":"Aero"}]}]
+=======
+[{"players":[{"level":0,"name":"John"},{"level":3,"name":"John Doe"},{"level":3,"name":"John Doe"},{"level":3,"name":"John Doe"},{"level":3,"name":"John Doe"},{"level":3,"name":"John Doe"},{"level":3,"name":"John Doe"},{"level":3,"name":"John Doe"},{"level":0,"name":"John Doe"}]}]
+>>>>>>> 3c264691464c2833e790eea2b43789cb8d89b96c
