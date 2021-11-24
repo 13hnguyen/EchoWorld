@@ -39,10 +39,6 @@ position = Vector2( -5.7999, -27.8862 )
 scale = Vector2( 1.12472, 1.05427 )
 texture = ExtResource( 1 )
 hframes = 10
-<<<<<<< HEAD
-=======
-frame = 1
->>>>>>> 3c264691464c2833e790eea2b43789cb8d89b96c
 
 [node name="AnimationFire" type="AnimationPlayer" parent="."]
 anims/fire = SubResource( 2 )

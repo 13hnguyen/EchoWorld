@@ -7,6 +7,10 @@ var movement : Vector2
 func _ready() -> void:
   if GameData.tryAgain == true: #sets the players health to 3 if they die and restart
     healthPoints = 3
+
+
+
+
 #######################################################################################################
 # CHARACTER MOVEMENT AND SHOOTING BULLETS
 ##########################################################################################################

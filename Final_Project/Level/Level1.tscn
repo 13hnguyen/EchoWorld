@@ -154,11 +154,7 @@ position = Vector2( 1502.49, 975.644 )
 position = Vector2( 2603.97, 977.206 )
 
 [node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
-<<<<<<< HEAD
 position = Vector2( 3186.19, 783.282 )
-=======
-position = Vector2( 3358.06, 782.596 )
->>>>>>> 3c264691464c2833e790eea2b43789cb8d89b96c
 
 [node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2038.71, 807.321 )
