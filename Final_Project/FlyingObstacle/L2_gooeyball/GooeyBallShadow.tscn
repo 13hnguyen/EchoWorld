@@ -6,6 +6,8 @@
 radius = 5.44719
 
 [node name="GooeyBallShadow" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 2
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 4.45142, -1.22135 )

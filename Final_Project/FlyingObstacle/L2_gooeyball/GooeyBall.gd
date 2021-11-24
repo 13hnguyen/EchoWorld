@@ -22,7 +22,6 @@ var ScaleUpCurrent = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  print("in _ready")
   show()
   # Variate the asteroid trajectories
   TravelVector.x += rand_range(-300,300)
@@ -35,7 +34,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-  print("in _process")
   # Move asteroid by delta
   position = position + TravelVector * delta
   
@@ -58,7 +56,6 @@ func _process(delta):
   
   
 func _on_ShadowDetector_body_entered( body : Node ) -> void :
-  print("in on_shadowdetector")
   # Only shadows should interact with 
   if is_a_parent_of(body) :
     on_explode($GooeyBallShadow)
@@ -67,7 +64,6 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
     
 # explosion method called by shadow detector or the bullet that hits it
 func on_explode(body : Node) :
-  print("in on_explode")
   var Impact = preload("res://FlyingObstacle/L2_gooeyball/GooeyBallExplosion.tscn").instance()
   get_parent().call_deferred("add_child", Impact)
   Impact.global_position = body.global_position

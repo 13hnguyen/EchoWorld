@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Music/Batalha #1.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GndObstacle/L2_hives/HiveShootup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GndObstacle/L4_fire/yellowring.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -130,6 +131,15 @@ position = Vector2( 2440.14, 720.38 )
 
 [node name="StaticBody2D13" parent="." instance=ExtResource( 12 )]
 position = Vector2( 3723, 777.867 )
+
+[node name="yellowring" parent="." instance=ExtResource( 13 )]
+position = Vector2( 836.754, 931.662 )
+
+[node name="yellowring2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1934.34, 785.554 )
+
+[node name="yellowring3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2743.28, 938.789 )
 
 [node name="On Screen Labels" type="CanvasLayer" parent="."]
 
