@@ -154,7 +154,7 @@ position = Vector2( 1502.49, 975.644 )
 position = Vector2( 2550.23, 980.034 )
 
 [node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2974.06, 794.596 )
+position = Vector2( 3358.06, 782.596 )
 
 [node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2038.71, 807.321 )

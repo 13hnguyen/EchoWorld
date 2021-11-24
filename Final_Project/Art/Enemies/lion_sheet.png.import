@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ground1.png-12beb465636c8d394db8e83f6bf52f5d.stex"
+path="res://.import/lion_sheet.png-e6c1cef5510772028bc295dfab519549.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ground1.png"
-dest_files=[ "res://.import/ground1.png-12beb465636c8d394db8e83f6bf52f5d.stex" ]
+source_file="res://Art/Enemies/lion_sheet.png"
+dest_files=[ "res://.import/lion_sheet.png-e6c1cef5510772028bc295dfab519549.stex" ]
 
 [params]
 
