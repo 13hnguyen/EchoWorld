@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 var speed    : = 300.0
-var healthPoints : = 100
+var healthPoints : = 3
 var movement : Vector2
 
 func _ready() -> void:
   if GameData.tryAgain == true: #sets the players health to 3 if they die and restart
-    healthPoints = 100
+    healthPoints = 3
 #######################################################################################################
 # CHARACTER MOVEMENT AND SHOOTING BULLETS
 ##########################################################################################################
