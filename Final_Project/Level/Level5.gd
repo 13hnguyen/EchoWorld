@@ -30,7 +30,8 @@ func _ready() -> void :
   AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
   #Start the enemy generation
-  EnemyGen = preload("res://Enemy/BeeEnemy/BeeEnemyGenerator.tscn").instance()
+  EnemyGen = preload("res://Enemy/TenteyeEnemy/TenteyeEnemyGenerator.tscn").instance()
+  print("tenteye created")
   EnemyGen.position = Vector2(1800, 700)
   
   # Add enemybgenerator to canvas layer since it follows the player  

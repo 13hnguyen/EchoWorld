@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Enemy/BlueShipEnemy/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Art/Enemies/alian-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/TenteyeEnemy/TenteyeEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Art/Enemies/tenteye_sheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Flashlights"
@@ -15,10 +15,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
 [node name="Enemy" type="KinematicBody2D" groups=[
@@ -32,22 +32,23 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -40 )
+position = Vector2( -0.445, -80 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
-hframes = 3
-vframes = 2
-frame = 4
+hframes = 8
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -1.64575, -100.635 )
-scale = Vector2( 1.63677, 2.39046 )
+position = Vector2( 2.0095, -127.562 )
+scale = Vector2( 0.945868, 2.77364 )
 polygon = PoolVector2Array( -42.5786, 22.4003, -35.5076, 37.603, -2.98065, 43.967, 35.9102, 39.0173, 44.0419, 23.1074, 29.5463, 14.6221, -1.21289, 11.0865, -29.1436, 16.0363 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
 anims/Flashlights = SubResource( 1 )
 
 [node name="BulletDownSpawnPos" type="Position2D" parent="."]
-position = Vector2( -80, 0 )
+position = Vector2( -30, 15 )
 rotation = 2.0944
 
 [node name="BulletShootTimer" type="Timer" parent="."]
