@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-# How fast the yellow gooey ball should travel
+# How fast the astroid should travel
 var TravelVector = Vector2( -1500, 1200 )
 
 var Scale1 = 0.8
@@ -22,7 +22,7 @@ var ScaleUpCurrent = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  
+  print("in _ready")
   show()
   # Variate the asteroid trajectories
   TravelVector.x += rand_range(-300,300)
@@ -31,24 +31,24 @@ func _ready():
   ScaleUpCurrent = rand_range(0, 1) > 0.5
   
   $Anchor.set_scale( ScaleUp if ScaleUpCurrent else ScaleSide )
-  $YellowGooeyBallShadow.set_scale( ScaleUp if ScaleUpCurrent else ScaleSide )
+  $GooeyBallShadow.set_scale( ScaleUp if ScaleUpCurrent else ScaleSide )
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-  
+  print("in _process")
   # Move asteroid by delta
   position = position + TravelVector * delta
   
   # Since the shadow moves by relative location, only need to shorten the y
-  $YellowGooeyBallShadow.position.y -= TravelVector.y * delta
+  $GooeyBallShadow.position.y -= TravelVector.y * delta
   
   # $Anchor/SpriteBlaze.set_modulate(lerp($Anchor/SpriteBlaze.get_modulate(), Color(1,0,0,1), 0.01))
   if ScaleUpCurrent :
     $Anchor.set_scale( lerp($Anchor.get_scale(), ScaleSide, ScaleLerp) );
-    $YellowGooeyBallShadow.set_scale( lerp($YellowGooeyBallShadow.get_scale(), ScaleSide, ScaleLerp) );
+    $GooeyBallShadow.set_scale( lerp($GooeyBallShadow.get_scale(), ScaleSide, ScaleLerp) );
   else :
     $Anchor.set_scale( lerp($Anchor.get_scale(), ScaleUp, ScaleLerp) );
-    $YellowGooeyBallShadow.set_scale( lerp($YellowGooeyBallShadow.get_scale(), ScaleUp, ScaleLerp) );
+    $GooeyBallShadow.set_scale( lerp($GooeyBallShadow.get_scale(), ScaleUp, ScaleLerp) );
     
   ScaleValue += ScaleLerp
   
@@ -58,17 +58,17 @@ func _process(delta):
   
   
 func _on_ShadowDetector_body_entered( body : Node ) -> void :
-  
+  print("in on_shadowdetector")
   # Only shadows should interact with 
   if is_a_parent_of(body) :
-    on_explode($YellowGooeyBallShadow)
+    on_explode($GooeyBallShadow)
     
     queue_free()
     
 # explosion method called by shadow detector or the bullet that hits it
 func on_explode(body : Node) :
-  
-  var Impact = preload("res://FlyingObstacle/L2_yellowgooeyball/YellowGooeyBallExplosion.tscn").instance()
+  print("in on_explode")
+  var Impact = preload("res://FlyingObstacle/L2_gooeyball/GooeyBallExplosion.tscn").instance()
   get_parent().call_deferred("add_child", Impact)
   Impact.global_position = body.global_position
   Impact.set_scale(get_scale())

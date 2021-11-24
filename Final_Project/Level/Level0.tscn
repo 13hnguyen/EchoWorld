@@ -94,13 +94,13 @@ position = Vector2( 3819.58, 905.191 )
 stream = ExtResource( 1 )
 
 [node name="Rock1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 385.671, 804.917 )
+position = Vector2( 364.289, 765.718 )
 
 [node name="Rock2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 994.48, 969.644 )
 
 [node name="Rock3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1502.49, 975.644 )
+position = Vector2( 1445.47, 972.08 )
 
 [node name="Rock4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2495.61, 968.943 )

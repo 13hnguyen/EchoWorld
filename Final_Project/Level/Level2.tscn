@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Music/Batalha #1.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GndObstacle/L2_hives/HiveShootup.tscn" type="PackedScene" id=12]
-[ext_resource path="res://GndObstacle/L4_fire/yellowring.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -100,7 +99,7 @@ position = Vector2( 382.197, 780.721 )
 position = Vector2( 3078.1, 756.535 )
 
 [node name="StaticBody2D3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2528.16, 990.861 )
+position = Vector2( 2393.78, 983.726 )
 
 [node name="StaticBody2D4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1566.04, 763.909 )
@@ -109,13 +108,13 @@ position = Vector2( 1566.04, 763.909 )
 position = Vector2( 1103.52, 989.43 )
 
 [node name="StaticBody2D6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2136.4, 813.598 )
+position = Vector2( 2143.53, 770.786 )
 
 [node name="StaticBody2D7" parent="." instance=ExtResource( 12 )]
-position = Vector2( 541.418, 733.719 )
+position = Vector2( 522.391, 725.395 )
 
 [node name="StaticBody2D8" parent="." instance=ExtResource( 12 )]
-position = Vector2( 579.494, 744.752 )
+position = Vector2( 556.899, 729.292 )
 
 [node name="StaticBody2D9" parent="." instance=ExtResource( 12 )]
 position = Vector2( 46.14, 776.031 )
@@ -124,22 +123,13 @@ position = Vector2( 46.14, 776.031 )
 position = Vector2( 1803.89, 800.487 )
 
 [node name="StaticBody2D11" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2463.82, 745.127 )
+position = Vector2( 2469.83, 720.755 )
 
 [node name="StaticBody2D12" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2434.07, 757.1 )
+position = Vector2( 2440.14, 720.38 )
 
 [node name="StaticBody2D13" parent="." instance=ExtResource( 12 )]
-position = Vector2( 3721.81, 786.191 )
-
-[node name="yellowring" parent="." instance=ExtResource( 13 )]
-position = Vector2( 822, 930 )
-
-[node name="yellowring2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2720, 918 )
-
-[node name="yellowring3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1926, 800 )
+position = Vector2( 3723, 777.867 )
 
 [node name="On Screen Labels" type="CanvasLayer" parent="."]
 

@@ -37,15 +37,6 @@ func _ready() -> void :
   
   EnemyGenPlayerDistance = EnemyGen.position.x - $Player.position.x
   
-  #Start the rock generation
-  #var RockGen = preload("res://Rock/RockGenerator.tscn")
-  #var rockGen = RockGen.instance()
-  #rockGen.position = Vector2(2000, 870)
-  
-  # Add rock generator to canvas layer since it follows the player
-    
-  #get_child(canvasIndex).add_child(rockGen)
-  
   
   # Start the background music playing.
   $BackgndMusic.play()

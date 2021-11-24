@@ -4,7 +4,7 @@
 [ext_resource path="res://GndObstacle/L4_fire/Fire.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72.9993, 29.6002 )
+extents = Vector2( 41.0425, 22.4853 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "fire"
@@ -34,11 +34,10 @@ position = Vector2( -5, -15 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 4.8909, -17.1954 )
+position = Vector2( -5.7999, -27.8862 )
 scale = Vector2( 1.12472, 1.05427 )
 texture = ExtResource( 1 )
 hframes = 10
-frame = 9
 
 [node name="AnimationFire" type="AnimationPlayer" parent="."]
 anims/fire = SubResource( 2 )

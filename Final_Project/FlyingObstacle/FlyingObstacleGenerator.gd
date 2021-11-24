@@ -48,7 +48,7 @@ func _process(delta):
     if(ObstacleNode == null) :
       print("ERROR: AsteroidNode was set to an invalid path.");
     
-    # Create the asteroid ndoe and set it's position randomly within Min and Max
+    # Create the asteroid node and set it's position randomly within Min and Max
     var Asteroid = ObstacleNode.instance()
     get_parent().add_child(Asteroid)
     

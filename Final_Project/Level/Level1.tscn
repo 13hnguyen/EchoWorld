@@ -145,16 +145,16 @@ position = Vector2( 363.6, 827.6 )
 position = Vector2( 57.671, 778.917 )
 
 [node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 564.88, 976.444 )
+position = Vector2( 700.645, 975.03 )
 
 [node name="RigidBody2D3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1502.49, 975.644 )
 
 [node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2550.23, 980.034 )
+position = Vector2( 2603.97, 977.206 )
 
 [node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2974.06, 794.596 )
+position = Vector2( 3186.19, 783.282 )
 
 [node name="RigidBody2D4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2038.71, 807.321 )

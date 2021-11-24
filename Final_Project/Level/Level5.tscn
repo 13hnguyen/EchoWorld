@@ -93,7 +93,7 @@ position = Vector2( 3819.58, 905.191 )
 stream = ExtResource( 1 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 59.671, 788.917 )
+position = Vector2( 112.644, 765.609 )
 
 [node name="RigidBody2D2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1022.48, 975.644 )
@@ -102,7 +102,7 @@ position = Vector2( 1022.48, 975.644 )
 position = Vector2( 1502.49, 975.644 )
 
 [node name="RigidBody2D5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2474.23, 960.034 )
+position = Vector2( 2563.23, 970.629 )
 
 [node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3278.06, 782.596 )
@@ -111,7 +111,7 @@ position = Vector2( 3278.06, 782.596 )
 position = Vector2( 2038.71, 807.321 )
 
 [node name="Fire" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2438, 722 )
+position = Vector2( 2425.29, 717.762 )
 
 [node name="Fire2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2750, 887.4 )
