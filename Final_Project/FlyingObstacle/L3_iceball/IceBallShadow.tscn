@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Art/Asteroids/yellow_ball_shadow.png" type="Texture" id=1]
+[ext_resource path="res://Art/Asteroids/iceball_shadow.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.44719
 
-[node name="GooeyBallShadow" type="KinematicBody2D"]
+[node name="IceBallShadow" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 2
 

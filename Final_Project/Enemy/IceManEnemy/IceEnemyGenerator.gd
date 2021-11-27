@@ -12,7 +12,7 @@ var SpawnVariance = 0.5
 # Keeps track of time since last enemy was spawned
 var TimeSince = 0.0
 
-var EnemyNode = preload("res://Enemy/BeeEnemy/BeeEnemy.tscn")
+var EnemyNode = preload("res://Enemy/IceManEnemy/IceManEnemy.tscn")
 
 # Debug options
 var DrawDebugRect = true
