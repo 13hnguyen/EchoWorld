@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Music/alexander-nakarada-superepic.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -11,8 +11,6 @@
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Art/Backgrounds/L1StarsTrans.png" type="Texture" id=10]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=11]
-[ext_resource path="res://FlyingObstacle/L1_germ/Germ.tscn" type="PackedScene" id=12]
-[ext_resource path="res://FlyingObstacle/L1_germ/GermExplosion.tscn" type="PackedScene" id=13]
 [ext_resource path="res://GndObstacle/L4_fire/Fireblue.tscn" type="PackedScene" id=14]
 [ext_resource path="res://GndObstacle/L4_fire/lava.tscn" type="PackedScene" id=15]
 
@@ -204,9 +202,3 @@ __meta__ = {
 [node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 11 )]
 visible = false
 position = Vector2( 1.5874, 1.58733 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1542.17, 883.189 )
-
-[node name="Germ" parent="KinematicBody2D" instance=ExtResource( 12 )]
-position = Vector2( -168.571, -43.4987 )
