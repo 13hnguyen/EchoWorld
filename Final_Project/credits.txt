@@ -9,7 +9,9 @@ Art:
 6. Level 3 Background PNG, Source: https://opengameart.org/content/space-background-01
 7. Level 4 Background PNG, Source: https://opengameart.org/content/space-background-7
 8. Level 5 Background PNG, Source: https://opengameart.org/content/space-backgrounds-0
-9. Evil_fly by Jana Ochse, Source: http://creativecommons.org/evil_fly_idl.png (edited by Gabs) 
+9. Level 1 Evil_fly by Jana Ochse, Source: http://creativecommons.org/evil_fly_idl.png (edited by Gabiela) 
+10. Level 4 Mine by Jonas Wagner, Source:  http://creativecommons.org/licenses/by-sa/3.0/
+11. Fire by WrathGames Studio, Source: http://wrathgames.com/blog (edited by Gabriela)
 
 Music:
 1. Dragon Slayer by Makai-Symphony, Source: https://soundcloud.com/makai-symphony
