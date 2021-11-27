@@ -24,6 +24,7 @@ position = Vector2( -1.68176, 997.303 )
 
 [node name="Sprite" type="Sprite" parent="Anchor"]
 position = Vector2( 1.54535, 3.31805 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
 [node name="ShadowDetector" type="Area2D" parent="Anchor"]
