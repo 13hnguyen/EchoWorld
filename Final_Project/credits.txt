@@ -1,8 +1,20 @@
+Space Invaders Programmers: Gabriele Aldrete, Randall Ferree, Bridget Krone, John-Phillip Sims, Hadrien Nguyen
+
+Art:
 1. Portal.png, Source: https://freepngimg.com/Artistic/portal
 2. Laser Bullets, Source: https://wenrexa.itch.io/laser-pack-bullets
 3. Asteroid.png, Source: https://opengameart.org/content/brown-asteroid
-4. Dragon Slayer by Makai-Symphony, Source: https://soundcloud.com/makai-symphony
-5. Chase by Alexander Nakarada, Source: https://www.serpentsoundstudios.com
-6. Main Theme (Overture)-The Grand Score by Alexander Nakarada, Source: https://creativecommons.org/licenses/by/4.0/
-7. Dragon Castle by Makai Symphony, Source: https://soundcloud.com/makai-symphony
-8. Batalha by Joâo Vitor Lisboa, Source: https://OpenGameArt.org
+4. Batalha by Joâo Vitor Lisboa, Source: https://OpenGameArt.org
+5. Level 2 Background PNG, Source: https://opengameart.org/content/space-background-1
+6. Level 3 Background PNG, Source: https://opengameart.org/content/space-background-01
+7. Level 4 Background PNG, Source: https://opengameart.org/content/space-background-7
+8. Level 5 Background PNG, Source: https://opengameart.org/content/space-backgrounds-0
+9. Level 1 Evil_fly by Jana Ochse, Source: http://creativecommons.org/evil_fly_idl.png (edited by Gabiela) 
+10. Level 4 Mine by Jonas Wagner, Source:  http://creativecommons.org/licenses/by-sa/3.0/
+11. Fire by WrathGames Studio, Source: http://wrathgames.com/blog (edited by Gabriela)
+
+Music:
+1. Dragon Slayer by Makai-Symphony, Source: https://soundcloud.com/makai-symphony
+2. Chase by Alexander Nakarada, Source: https://www.serpentsoundstudios.com
+3. Main Theme (Overture)-The Grand Score by Alexander Nakarada, Source: https://creativecommons.org/licenses/by/4.0/
+4. Dragon Castle by Makai Symphony, Source: https://soundcloud.com/makai-symphony

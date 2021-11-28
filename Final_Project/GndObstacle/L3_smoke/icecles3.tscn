@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Art/Obstacles/whitesmokebig-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://GndObstacle/L3_smoke/smoke.gd" type="Script" id=2]
+[ext_resource path="res://Art/Obstacles/icicles.png" type="Texture" id=1]
+[ext_resource path="res://GndObstacle/L3_smoke/icecles.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 60.3999, 21.2 )
+extents = Vector2( 28.4378, 56.2689 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "fire"
-length = 5.0
+length = 4.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -17,31 +17,29 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.9, 1.2, 1.8, 2.2, 2.3, 2.7, 3.2, 3.8, 4.2, 4.6, 4.95 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+"values": [ 48, 49, 50, 51, 52, 53, 54, 55 ]
 }
 
-[node name="Smoke" type="StaticBody2D"]
-position = Vector2( 10, -2 )
+[node name="iciclebig" type="StaticBody2D"]
+position = Vector2( 8.5, -2.5 )
 collision_layer = 8
 collision_mask = 13
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5, -15 )
+position = Vector2( 9, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 4.8909, -17.1954 )
-scale = Vector2( 1.12472, 1.05427 )
+position = Vector2( 11.3909, 1.3046 )
+scale = Vector2( 4, 4.5 )
 texture = ExtResource( 1 )
-hframes = 13
-frame = 8
+hframes = 8
+vframes = 8
+frame = 51
 
 [node name="AnimationFire" type="AnimationPlayer" parent="."]
 anims/fire = SubResource( 2 )

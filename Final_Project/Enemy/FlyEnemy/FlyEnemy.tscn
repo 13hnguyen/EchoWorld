@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Enemy/IceManEnemy/IceManEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Art/Enemies/ice_alien_sheet.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/FlyEnemy/FlyEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Art/Enemies/evil_fly.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Flashlights"
-length = 1.2
+resource_name = "Flying"
+length = 0.85
 loop = true
-step = 0.2
+step = 0.02
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -15,40 +15,38 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.15 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 12 ]
 }
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[node name="FlyEnemy" type="KinematicBody2D" groups=[
 "enemy",
 ]]
-position = Vector2( -3.41422, 19.5356 )
+position = Vector2( -2, 16 )
 collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
+[node name="BombDownSpawnPos" type="Position2D" parent="."]
+position = Vector2( -15, 40 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -40 )
-scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
-hframes = 3
-frame = 1
+hframes = 10
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 2.0095, -127.562 )
-scale = Vector2( 0.945868, 2.77364 )
-polygon = PoolVector2Array( -42.5786, 22.4003, -35.5076, 37.603, -2.98065, 43.967, 35.9102, 39.0173, 44.0419, 23.1074, 29.5463, 14.6221, -1.21289, 11.0865, -29.1436, 16.0363 )
+visible = false
+position = Vector2( -30.9193, -128.598 )
+scale = Vector2( 1.41609, 3.62079 )
+polygon = PoolVector2Array( -50.3855, 22.1435, -29.305, 33.6395, 15.2311, 40.1422, 58.2827, 32.9427, 44.0419, 23.1074, 26.8105, 16.6859, -1.09881, 15.2924, -33.4617, 15.9891 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Flashlights = SubResource( 1 )
-
-[node name="BulletDownSpawnPos" type="Position2D" parent="."]
-position = Vector2( -67.4767, -30.2549 )
-rotation = 2.0944
+anims/Flying = SubResource( 1 )
 
 [node name="BulletShootTimer" type="Timer" parent="."]
 wait_time = 2.0

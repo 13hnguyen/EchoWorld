@@ -1,10 +1,10 @@
 extends Node
 
-var GermGeneratorInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
-var GermGen
+var IceBallGeneratorInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
+var IceBallGen
 var EnemyGen
 
-var GermGenPlayerDistance = 0.0
+var IceBallGenPlayerDistance = 0.0
 var EnemyGenPlayerDistance = 0.0
 
 func _ready() -> void :
@@ -20,16 +20,16 @@ func _ready() -> void :
     GameData.tryAgain = false
 
   # Start the Germ generation
-  GermGen = GermGeneratorInstance.instance()
-  add_child(GermGen)
-  GermGen.position = Vector2(1300, -100)
+  IceBallGen = IceBallGeneratorInstance.instance()
+  add_child(IceBallGen)
+  IceBallGen.position = Vector2(1300, -100)
   # set the Germ node
-  GermGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L1_germ/Germ.tscn")
+  IceBallGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L3_iceball/IceBall.tscn")
   
-  GermGenPlayerDistance = GermGen.position.x - $Player.position.x
+  IceBallGenPlayerDistance = IceBallGen.position.x - $Player.position.x
   
   #Start the enemy generation
-  EnemyGen = preload("res://Enemy/FlyEnemy/FlyEnemyGenerator.tscn").instance()
+  EnemyGen = preload("res://Enemy/IceManEnemy/IceEnemyGenerator.tscn").instance()
   EnemyGen.position = Vector2(1800, 700)
   
   # Add enemybgenerator to canvas layer since it follows the player  
@@ -43,5 +43,5 @@ func _ready() -> void :
   
   
 func _process(_delta):
-  GermGen.position.x = $Player.position.x + GermGenPlayerDistance
+  IceBallGen.position.x = $Player.position.x + IceBallGenPlayerDistance
   EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance
