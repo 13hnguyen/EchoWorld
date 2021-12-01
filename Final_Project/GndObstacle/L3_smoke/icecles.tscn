@@ -4,7 +4,7 @@
 [ext_resource path="res://GndObstacle/L3_smoke/icecles.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.8, 10 )
+extents = Vector2( 21.3534, 4.19298 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "fire"
@@ -34,8 +34,8 @@ position = Vector2( 9, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 11.3909, 1.3046 )
-scale = Vector2( 1.81222, 1.14802 )
+position = Vector2( 12.8926, -1.36508 )
+scale = Vector2( 1.71315, 1.23145 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 8

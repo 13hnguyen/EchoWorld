@@ -5,7 +5,7 @@
 [ext_resource path="res://Level/Level3.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://InfiniteScroll/InfiniteScroll.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GndObstacle/L0_rocks/snowball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GndObstacle/L3_smoke/snowball.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Backgrounds/L3Universe.png" type="Texture" id=7]
 [ext_resource path="res://Art/Backgrounds/ground3.png" type="Texture" id=8]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
@@ -108,41 +108,38 @@ position = Vector2( 200.2, 784.4 )
 [node name="snowball3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3443, 755.4 )
 
-[node name="icicle" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2004.5, 821.5 )
-
 [node name="icicle10" parent="." instance=ExtResource( 13 )]
-position = Vector2( 3458.5, 822.5 )
+position = Vector2( 3462.95, 822.5 )
 
 [node name="icicle2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 3540.5, 955.5 )
+position = Vector2( 3538.72, 964.409 )
 
 [node name="icicle11" parent="." instance=ExtResource( 13 )]
-position = Vector2( 3284.5, 812.9 )
+position = Vector2( 3293.41, 807.555 )
 
 [node name="icicle3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3319.5, 713.1 )
 
 [node name="icicle4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 894.5, 764.5 )
+position = Vector2( 900.736, 753.809 )
 
 [node name="icicle8" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2849.5, 749.3 )
+position = Vector2( 2849.5, 744.846 )
 
 [node name="icicle9" parent="." instance=ExtResource( 14 )]
-position = Vector2( 3151.7, 893.1 )
+position = Vector2( 3043.9, 928.736 )
 
 [node name="icicle7" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1043.5, 693.5 )
 
 [node name="icicle5" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1572.7, 938.5 )
+position = Vector2( 1568.25, 942.064 )
 
 [node name="icicle6" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1637.7, 950.5 )
+position = Vector2( 1636.81, 955.845 )
 
 [node name="icicle12" parent="." instance=ExtResource( 15 )]
-position = Vector2( 3371.7, 819.5 )
+position = Vector2( 3376.15, 812.373 )
 
 [node name="iciclebig" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2951.5, 639.3 )
@@ -157,10 +154,10 @@ position = Vector2( 492, 786 )
 position = Vector2( 1799.4, 954 )
 
 [node name="Smoke3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 854, 930 )
+position = Vector2( 855.782, 938.018 )
 
 [node name="Smoke4" parent="." instance=ExtResource( 12 )]
-position = Vector2( 744, 934 )
+position = Vector2( 748.454, 942.018 )
 
 [node name="Smoke5" parent="." instance=ExtResource( 12 )]
 position = Vector2( 364, 996 )
@@ -172,13 +169,13 @@ position = Vector2( 366, 826 )
 position = Vector2( 2272, 996 )
 
 [node name="Smoke8" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1540, 820 )
+position = Vector2( 1523.07, 812.873 )
 
 [node name="Smoke9" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1392, 816 )
+position = Vector2( 1400.02, 807.091 )
 
 [node name="Smoke10" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2717, 937 )
+position = Vector2( 2714.33, 954.818 )
 
 [node name="Smoke11" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2400, 800 )

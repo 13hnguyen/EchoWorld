@@ -3,7 +3,7 @@
 [ext_resource path="res://Art/Obstacles/Beehive.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 41.4013, 58.1425 )
+extents = Vector2( 33.384, 49.2327 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_layer = 8
@@ -14,6 +14,6 @@ position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3.8909, -4.69543 )
-scale = Vector2( 1.64035, 1.70271 )
+position = Vector2( 1.2182, 12.6771 )
+scale = Vector2( 1.67599, 1.90762 )
 texture = ExtResource( 1 )

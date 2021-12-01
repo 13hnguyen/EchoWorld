@@ -36,8 +36,8 @@ position = Vector2( -5, -15 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -10.6654, -17.1954 )
-scale = Vector2( 1.12472, 1.05427 )
+position = Vector2( -4.71266, -22.156 )
+scale = Vector2( 1.28346, 1.2527 )
 texture = ExtResource( 1 )
 hframes = 13
 

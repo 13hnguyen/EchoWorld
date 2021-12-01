@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/Obstacles/tentacle.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 38.5838, 36.3591 )
+extents = Vector2( 16.4678, 28.6698 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "unroll"
