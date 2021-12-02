@@ -24,7 +24,7 @@ func _ready() -> void :
   add_child(AsteroidGen)
   AsteroidGen.position = Vector2(1300, -100)
   # set the asteroid node
-  #AsteroidGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L1_germ/Germ.tscn")
+  AsteroidGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L4_comet/comet.tscn")
   
   AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
