@@ -2,10 +2,10 @@ extends Node
 
 var AsteroidGenInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
 var AsteroidGen
-var EnemyGen
+#var EnemyGen
 
 var AsteroidGenPlayerDistance = 0.0
-var EnemyGenPlayerDistance = 0.0
+#var EnemyGenPlayerDistance = 0.0
 
 func _ready() -> void :
   # We don't want the same random numbers each time.
@@ -29,13 +29,13 @@ func _ready() -> void :
   AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
   
   #Start the enemy generation
-  EnemyGen = preload("res://Enemy/BlueShipEnemy/EnemyGenerator.tscn").instance()
-  EnemyGen.position = Vector2(1800, 700)
+  #EnemyGen = preload("res://Enemy/BlueShipEnemy/EnemyGenerator.tscn").instance()
+  #EnemyGen.position = Vector2(1800, 700)
   
   # Add enemybgenerator to canvas layer since it follows the player  
   #add_child(EnemyGen)
   
-  EnemyGenPlayerDistance = EnemyGen.position.x - $Player.position.x
+  #EnemyGenPlayerDistance = EnemyGen.position.x - $Player.position.x
   
  
   # Start the background music playing.
@@ -44,4 +44,4 @@ func _ready() -> void :
   
 func _process(_delta):
   AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
-  EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance
+  #EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance
