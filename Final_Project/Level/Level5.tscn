@@ -190,6 +190,9 @@ position = Vector2( 1496.5, 968.017 )
 [node name="tentacle4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2174.34, 819.346 )
 
+[node name="tentacle7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1699.78, 800.214 )
+
 [node name="tentacle5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2897.54, 957.938 )
 

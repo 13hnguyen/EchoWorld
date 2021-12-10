@@ -1,10 +1,10 @@
 extends Node
 
-var AsteroidGenInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
-var AsteroidGen
+var handGeneratorInstance = preload("res://FlyingObstacle/FlyingObstacleGenerator.tscn")
+var handGen
 var EnemyGen
 
-var AsteroidGenPlayerDistance = 0.0
+var handGenPlayerDistance = 0.0
 var EnemyGenPlayerDistance = 0.0
 
 func _ready() -> void :
@@ -19,19 +19,17 @@ func _ready() -> void :
     hp.set_text(str(3))
     GameData.tryAgain = false
 
-  # Start the asteroid generation
-  AsteroidGen = AsteroidGenInstance.instance()
-  add_child(AsteroidGen)
-  AsteroidGen.position = Vector2(1300, -100)
+  # Start the Germ generation
+  handGen = handGeneratorInstance.instance()
+  add_child(handGen)
+  handGen.position = Vector2(1300, -100)
+  # set the Germ node
+  handGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L5_hand/hand.tscn")
   
-  # TODO Hadrien: Put your referrence to your flying obstacle here
-  AsteroidGen.call_deferred("set_obstacle_node", "res://FlyingObstacle/L0_asteroid/Asteroid.tscn")
-  
-  AsteroidGenPlayerDistance = AsteroidGen.position.x - $Player.position.x
+  handGenPlayerDistance = handGen.position.x - $Player.position.x
   
   #Start the enemy generation
   EnemyGen = preload("res://Enemy/TenteyeEnemy/TenteyeEnemyGenerator.tscn").instance()
-  print("tenteye created")
   EnemyGen.position = Vector2(1800, 700)
   
   # Add enemybgenerator to canvas layer since it follows the player  
@@ -39,20 +37,11 @@ func _ready() -> void :
   
   EnemyGenPlayerDistance = EnemyGen.position.x - $Player.position.x
   
-  #Start the rock generation
-  #var RockGen = preload("res://Rock/RockGenerator.tscn")
-  #var rockGen = RockGen.instance()
-  #rockGen.position = Vector2(2000, 870)
-  
-  # Add rock generator to canvas layer since it follows the player
-    
-  #get_child(canvasIndex).add_child(rockGen)
-  
   
   # Start the background music playing.
   $BackgndMusic.play()
   
   
 func _process(_delta):
-  AsteroidGen.position.x = $Player.position.x + AsteroidGenPlayerDistance
+  handGen.position.x = $Player.position.x + handGenPlayerDistance
   EnemyGen.position.x =    $Player.position.x + EnemyGenPlayerDistance
