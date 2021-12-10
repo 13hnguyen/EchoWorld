@@ -22,7 +22,6 @@ var ScaleUpCurrent = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  
   show()
   # Variate the asteroid trajectories
   TravelVector.x += rand_range(-300,300)
@@ -61,7 +60,7 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
   
   # Only shadows should interact with 
   if is_a_parent_of(body) :
-    on_explode($HandShadow)
+    on_explode($handShadow)
     
     queue_free()
     

@@ -22,7 +22,7 @@ var ObstacleNode = preload("res://FlyingObstacle/L0_asteroid/Asteroid.tscn")
 
 
 # Debug options
-var DrawDebugRect = false
+var DrawDebugRect = true
 
 func set_obstacle_node(path : String):
   ObstacleNode = load(path);
