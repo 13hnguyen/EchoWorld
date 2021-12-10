@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 # How fast the astroid should travel
-var TravelVector = Vector2( -1500, 1200 )
+#var TravelVector = Vector2( -1500, 1200 )
+var TravelVector = Vector2( -250, 200 )
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
