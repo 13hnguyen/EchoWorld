@@ -68,7 +68,7 @@ func _on_ShadowDetector_body_entered( body : Node ) -> void :
 # explosion method called by shadow detector or the bullet that hits it
 func on_explode(body : Node) :
   
-  var Impact = preload("res://FlyingObstacle/L5_hand/HandExplosion.tscn").instance()
+  var Impact = preload("res://FlyingObstacle/L5_hand/handExplosion.tscn").instance()
   get_parent().call_deferred("add_child", Impact)
   Impact.global_position = body.global_position
   Impact.set_scale(get_scale())
