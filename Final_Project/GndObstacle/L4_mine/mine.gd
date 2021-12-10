@@ -16,7 +16,7 @@ func _on_PlayerDetector_body_entered( body : Node) -> void:
         #delete_collision()
         #$PlayerDetector.queue_free()
     if body.is_in_group("player") :
-        print("Player hit a mine.  deleting mine")
+        #print("Player hit a mine.  deleting mine")
         
         var Impact = preload("res://FlyingObstacle/L4_comet/cometExplosion.tscn").instance()
         get_parent().call_deferred("add_child", Impact)

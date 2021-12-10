@@ -61,7 +61,7 @@ func _physics_process( delta : float ) -> void :
 
 # function to detect whether the player has been hit by another 2D Body (ie. asteroid or rock)
 func _on_EnemyDetector_body_entered( body : Node ) -> void :
-  print( "Player got hit by 2D body. Type: ", body )
+  #print( "Player got hit by 2D body. Type: ", body )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)
@@ -79,7 +79,7 @@ func _on_EnemyDetector_area_entered( area: Area2D) -> void:
   if area.is_in_group("portal") :
     return
   
-  print ( "Player got hit by 2D area. Type: ", area )
+  #print ( "Player got hit by 2D area. Type: ", area )
   healthPoints = healthPoints - 1
   var HealthLabel = get_parent().get_node("On Screen Labels/PlayerHP")
   HealthLabel.text = str(healthPoints)

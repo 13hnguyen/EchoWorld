@@ -24,7 +24,7 @@ func _on_Bullet_body_entered(body: Node) -> void:
     Impact.global_position = body.global_position
     Impact.set_scale(body.get_scale())
     body.queue_free()
-    print( "Enemy got hit by bullet" )
+    #print( "Enemy got hit by bullet" )
   
   elif body.is_in_group("flying") :
     newScore = newScore + 10
@@ -32,7 +32,7 @@ func _on_Bullet_body_entered(body: Node) -> void:
     # spawn explosion in air
     body.call_deferred("on_explode", body)
     body.queue_free()
-    print( "Asteroid got hit by bullet" )
+    #print( "Asteroid got hit by bullet" )
     
   elif body.is_in_group("rock") :
    body.queue_free()

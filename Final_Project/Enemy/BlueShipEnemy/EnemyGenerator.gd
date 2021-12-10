@@ -30,7 +30,7 @@ func _process(delta):
   
   # Spawn enemy
   if TimeSince <= 0.0 :
-    print("new enemy")
+    #print("new enemy")
     TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
     
     # Create the enemy node and set it's position randomly within Min and Max

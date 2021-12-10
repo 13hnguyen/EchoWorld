@@ -27,5 +27,5 @@ func fire () -> void:
   b.transform = $BulletDownSpawnPos.global_transform
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-  print("enemy left screen. free enemy.")
+  #print("enemy left screen. free enemy.")
   queue_free()

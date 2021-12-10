@@ -64,10 +64,10 @@ texture = ExtResource( 3 )
 speed = 0.05
 
 [node name="Logo" type="TextureRect" parent="."]
-margin_left = 400.779
-margin_top = 75.8775
-margin_right = 1490.78
-margin_bottom = 258.878
+margin_left = 420.578
+margin_top = 77.2917
+margin_right = 1510.58
+margin_bottom = 260.292
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

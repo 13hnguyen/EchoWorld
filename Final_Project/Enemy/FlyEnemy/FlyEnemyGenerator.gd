@@ -30,13 +30,13 @@ func _process(delta):
   
   # Spawn enemy
   if TimeSince <= 0.0 :
-    print("new enemy")
+    #print("new enemy")
     TimeSince = SpawnTime + rand_range(-SpawnVariance, SpawnVariance)
     
     # Create the enemy node and set it's position randomly within Min and Max
     var Enemy = EnemyNode.instance()
     get_parent().add_child(Enemy)
-    print(Enemy.name)
+    #print(Enemy.name)
     
     # Randomly pick a location in the relative rect
     var x = rand_range(SpawnMin.x, SpawnMax.x)

@@ -43,5 +43,5 @@ func fire () -> void:
   currentBomb.set_scale(Vector2(0,0));
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-  print("enemy left screen. free enemy.")
+  #print("enemy left screen. free enemy.")
   queue_free()
